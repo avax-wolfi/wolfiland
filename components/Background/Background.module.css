@@ -1,0 +1,8 @@
+.container {
+  align-items: center;
+  background-image: url('../../public/icons/bg.svg');
+  display: flex;
+  flex-direction: column;
+  height: 3508px;
+  width: 100%;
+}

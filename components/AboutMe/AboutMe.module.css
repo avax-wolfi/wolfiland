@@ -1,0 +1,33 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.about-me {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+}
+
+.frame {
+  width: 394px;
+  height: 218px;
+  background-color: gainsboro;
+}
+
+.about-me-text {
+  margin: 0;
+  width: 50%;
+  color: white;
+  align-self: center;
+}

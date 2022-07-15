@@ -1,0 +1,25 @@
+.container {
+  background-color: #7ecdda;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.nav {
+  min-height: 118px;
+  width: 85%;
+  padding: 0 !important;
+}
+
+.nav-options {
+  width: 200px;
+}
+
+.social-links {
+  width: 240px;
+}
+
+.social-link-item {
+  margin-bottom: 10px;
+}
