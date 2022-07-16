@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 
-let document;
+let document: any;
 if (typeof window !== "undefined") {
   document = window.document;
 }
