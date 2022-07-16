@@ -3,7 +3,7 @@ import { AddressZero } from "@ethersproject/constants";
 import { Contract } from "@ethersproject/contracts";
 import { JsonRpcSigner, Web3Provider } from "@ethersproject/providers";
 import { BigNumber } from "@ethersproject/bignumber";
-import { Currency, CurrencyAmount, Token, TokenAmount, JSBI } from "@rytell/sdk";
+import { Currency, CurrencyAmount, Token, TokenAmount, JSBI } from "@pangolindex/sdk";
 import { parseUnits } from "@ethersproject/units";
 
 // add 10%
@@ -56,8 +56,8 @@ export function getContract(
   );
 }
 
-export const fromIpfsToUrl = (ipfsuri) => {
-  const prefix = "https://rytell.mypinata.cloud/ipfs/";
+export const fromIpfsToUrl = (ipfsuri: string) => {
+  const prefix = "https://ipfs.io/ipfs/";
   const [, cidWithContent] = ipfsuri.split("//");
   return `${prefix}${cidWithContent}`;
 };
