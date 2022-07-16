@@ -1,0 +1,30 @@
+.container{
+     height: 211px;
+     background-color: #1E0045;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+
+.nav-footer{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.nav {
+    color: white;
+    text-transform: uppercase;
+
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+}
+
