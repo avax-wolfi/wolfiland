@@ -1,26 +1,21 @@
-import React from 'react'
+import React from "react";
 
-import Image from 'next/image'
+import Image from "next/image";
 
-import barLogo from '../../public/icons/menu logo 1.png'
-import discord from '../../public/icons/discord 1.svg'
-import twitter from '../../public/icons/twitter 1.svg'
-import connectWallet from '../../public/icons/connect wallet.svg'
-import styles from './Header.module.css'
-import Link from 'next/link'
+import barLogo from "../../public/icons/menu logo 1.png";
+import discord from "../../public/icons/discord 1.svg";
+import twitter from "../../public/icons/twitter 1.svg";
+import connectWallet from "../../public/icons/connect wallet.svg";
+import styles from "./Header.module.css";
+import Link from "next/link";
+import Pad from "../Pad";
 
 export interface HeaderProps {}
 
 export default React.memo<HeaderProps>(function Header() {
   return (
-    <header className={styles['container']}>
-      <nav
-        className={
-          'navbar navbar-expand-md bg-red position-relative' +
-          ' ' +
-          styles['nav']
-        }
-      >
+    <header className={styles["container"]}>
+      <nav className={styles["nav"]}>
         {/* MENU ICON */}
         <Image
           className="navbar-brand navbar-toggler"
@@ -33,19 +28,12 @@ export default React.memo<HeaderProps>(function Header() {
           alt="Menu"
         />
 
-        <div
-          className={
-            'collapse navbar-collapse align-items-center pb-3 pb-md-0' +
-            ' ' +
-            styles['nav-options ']
-          }
-          id="headerNavbar"
-        >
+      
           {/* OPTIONS LINKS */}
-          <div className="navbar-nav  align-items-center mx-auto">
+          <div className={styles["nav-options"]}>
             <a
-              className="nav-link text-white text-uppercase"
-              aria-current="page"
+              
+             
               href="#"
             >
               story
@@ -57,12 +45,11 @@ export default React.memo<HeaderProps>(function Header() {
               mint
             </a>
           </div>
+        
           {/* SOCIAL LINKS */}
           <div
             className={
-              'navbar-nav  align-self-center justify-content-between mx-auto mx-lg-0 mt-md-0' +
-              ' ' +
-              styles['social-links']
+              styles["social-links"]
             }
           >
             <a
@@ -73,7 +60,7 @@ export default React.memo<HeaderProps>(function Header() {
             </a>
             <a
               className="d-flex justify-content-center me-2 mb-3 mb-lg-0 mt-md-0"
-              href={''}
+              href={""}
             >
               <Image src={twitter} alt="Twitter" />
             </a>
@@ -85,8 +72,8 @@ export default React.memo<HeaderProps>(function Header() {
               <Image src={connectWallet} alt="Connect wallet" />
             </a>
           </div>
-        </div>
+       
       </nav>
     </header>
-  )
-})
+  );
+});

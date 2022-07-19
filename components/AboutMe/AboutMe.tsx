@@ -2,6 +2,8 @@ import Image from 'next/image'
 import React from 'react'
 
 import tv from '../../public/icons/Group.svg'
+import mari from '../../public/img/mar 1.svg'
+import mari2 from '../../public/img/mar-2.svg'
 import storyLogo from '../../public/icons/storyLogo.svg'
 import separator from '../../public/icons/Avax separador.svg'
 import styles from './AboutMe.module.css'
@@ -16,7 +18,8 @@ export default React.memo<AboutMeProps>(function AboutMe() {
         <Image src={storyLogo} alt="The Story behind Wolfi" />
       </div>
       <div className={styles['about-me']}>
-        <div className={styles['frame']}></div>
+        <Image src={mari} className={styles['frame-sm']}/>
+        <Image src={mari2} className={styles['frame']}/>
         <p className={styles['about-me-text']}>
           I am Mar, the creator of wolfi, the most popular mascot among the
           Avalanche community. I’ve been active working on different projects,

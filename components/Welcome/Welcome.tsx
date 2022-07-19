@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import mint from '../../public/icons/mint now 1.png'
 import styles from './Welcome.module.css'
+import Pad from '../Pad'
 
 export interface WelcomeProps {}
 
@@ -10,16 +11,12 @@ export default React.memo<WelcomeProps>(function Welcome() {
     <div className={styles['container']}>
       <div className={styles['welcome']}>
         <div className={styles['left-box']}></div>
-        <div style={{ width: '30%' }}></div>
+      
         <div className={styles['right-box']}>
+          <h1>welcome to</h1>
+          <Pad amt={190} />
           <div
-            style={{
-              height: '90%',
-              width: '100%',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'flex-end',
-            }}
+            className={styles['img-div']}
           >
             <Image className={styles['mint-now']} src={mint} alt="Mint Now" />
           </div>

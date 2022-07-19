@@ -13,21 +13,23 @@
   padding-bottom: 70px;
 }
 
-.about-me {
-  display: flex;
-  justify-content: space-between;
-  width: 70%;
-}
-
-.frame {
-  width: 394px;
-  height: 218px;
-  background-color: gainsboro;
-}
-
-.about-me-text {
-  margin: 0;
-  width: 50%;
-  color: white;
-  align-self: center;
+@media(min-width:990px){
+  
+  .about-me {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+  }
+  
+  .frame-sm{
+    display: none !important;
+  }
+  
+  .about-me-text {
+    margin: 0;
+    width: 50%;
+    color: white;
+    align-self: center;
+  }
+  
 }
