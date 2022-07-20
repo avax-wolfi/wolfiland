@@ -33,7 +33,7 @@ export default React.memo<CollectionProps>(function Collection() {
             </p>
           </div>
           <Pad amt={70} row />
-          <Image src={wolfi} alt="Wolfi" />
+          <Image src={wolfi} alt="Wolfi" style={{alignSelf:'center'}} />
         </div>
         <Pad amt={100} />
         <div className={styles['wolfi-benefits']}>
