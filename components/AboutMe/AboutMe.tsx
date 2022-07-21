@@ -34,8 +34,9 @@ export default React.memo<AboutMeProps>(function AboutMe() {
           to create the first official wolfi collection, which mainly works as a
           fund to support me as an artist.
         </p>
+        
+        <video className={styles['rectangle']} src="../../public/videos/Creation Video-1.mp4" controls />
 
-         <div className={styles['rectangle']}></div>
 
         <p className={styles["about-me-text-2"]}>
           I designed wolfi in 2020, with the expectations to create a caricature
@@ -45,7 +46,7 @@ export default React.memo<AboutMeProps>(function AboutMe() {
         </p>
       </div>
       <div className={styles["tv"]}>
-        <Image src={tv} alt="Tv" />
+      <video src="../../public/videos/Creation Video-1.mp4" controls width={640} height={330}></video>
       </div>
       <Pad amt={200} />
       <div className={styles['separator']}><Image src={separator} alt="Separator" /></div>

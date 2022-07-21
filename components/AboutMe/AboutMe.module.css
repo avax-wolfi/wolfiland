@@ -69,7 +69,17 @@
     text-align: left;
   }
 
-  .tv{display: unset;}
+  .tv{
+    display: flex;
+    background-image: url('../../public/icons/Group.svg');
+    width: 954px;
+    height: 727px;
+    justify-content: center;
+    align-items: flex-end;
+    padding-right: 138px;
+    
+  
+   }
 
   .rectangle{
      display: none;

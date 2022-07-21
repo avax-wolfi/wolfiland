@@ -58,7 +58,7 @@
    .nav {
        color: white;
        text-transform: uppercase;
-   
+       flex-direction: row;
        width: 25%;
        display: flex;
        justify-content: space-between;
