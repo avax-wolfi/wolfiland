@@ -2,11 +2,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+ 
   width: 100%;
-}
-
-.top-waves {
-  width: 100%;
+  height: 100%;
+  position: relative;
 }
 
 .magenta {
@@ -14,52 +13,123 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-top:2px solid #ec408b !important;
+  border-bottom:2px solid #ec408b !important;
+  margin-top: -1px !important;
+  margin-bottom: -1px !important;
 }
 
 .wolfi-collection {
   display: flex;
-  width: 100%%;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
 }
 
 .desc-collection {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  width: 100%;
 }
 
 .desc-collection p {
-  width: 600px;
+  color: white;
+  width: 300px;
+  text-align: center;
+  align-self: center;
 }
 
 .wolfi-benefits {
   display: flex;
   flex-direction: column;
-  justify-content: cente;
-  align-items: center;
-  width: 100%;
-}
-.card-group {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 90%;
 }
 
+.card-group{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   width: 100%;
+   
+}
 .card {
-  display: flex;
+  display: flex !important;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   color: white;
-  width: 300px;
+  max-width: 320px;
   height: 347px;
   background: #472d77;
   border-radius: 27px;
+  margin-bottom: 20px;
 }
 
-.card p {
-  width: 90%;
+.card-img{
+    
+}
+
+.card p{
+   width: 90%;
+   margin: 0;
+   text-align: center;
+}
+
+.top-waves {
+ 
+  margin-bottom: -1px !important;
+  
+  
+  
 }
 
 .down-waves {
   transform: rotate(-180deg);
+  border-bottom:-1px solid #ec408b !important;
+}
+
+@media (min-width: 990px) {
+  
+  .wolfi-collection {
+    flex-direction: row;
+    width: 90%;
+  }
+
+  .desc-collection p {
+    width: 572px;
+    align-self: unset;
+    align-self: center;
+  }
+
+  .wolfi-benefits {
+    display: flex;
+    flex-direction: column;
+    justify-content: cente;
+    align-items: center;
+    width: 100%;
+  }
+  .card-group {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+    color: white;
+    width: 22%;
+    height: 347px;
+    background: #472d77;
+    border-radius: 27px;
+  }
+
+  .card p {
+    width: 90%;
+  }
+
+  
 }

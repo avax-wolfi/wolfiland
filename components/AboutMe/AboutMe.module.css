@@ -13,21 +13,115 @@
   padding-bottom: 70px;
 }
 
+.tv{
+   display: none;
+}
+
+
 .about-me {
   display: flex;
-  justify-content: space-between;
-  width: 70%;
+  flex-direction: column;
+  align-items: center;
 }
 
 .frame {
-  width: 394px;
-  height: 218px;
-  background-color: gainsboro;
+  display: none !important;
 }
 
-.about-me-text {
-  margin: 0;
-  width: 50%;
+.rectangle{
+ width: 100%;
+  height:160px;
+  background-color: black;
+
+}
+
+.about-me-text,.about-me-text-2{
+  width: 290px;
   color: white;
   align-self: center;
+  font-size: 16px;
+}
+
+.separator{width: 70%; display: flex; justify-content: center;}
+
+@media (min-width: 620px ) {
+  .frame-sm {
+    display: none !important;
+  }
+
+  .frame {
+    display: block !important;
+  }
+
+  .rectangle{
+    width:500px;
+    height: 320px;
+ }
+ 
+ .about-me-text{
+  width: 500px;
+ }
+
+ .about-me-text-2{
+  width: 500px;
+ }
+ 
+}
+
+
+
+@media (min-width: 990px) {
+  .about-me {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 84%;
+    align-items: center;
+  }
+  .about-me-text {
+    margin: 0;
+    width: 550px;
+    text-align: left;
+  }
+
+  .tv{
+    display: flex;
+    background-image: url('../../public/icons/Group.svg');
+    width: 954px;
+    height: 727px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    
+  
+   }
+
+    .video{
+      height:61%;
+     
+      width: 82%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-end;
+   }
+
+   .video:focus { outline:none; }
+
+  .rectangle{
+     display: none;
+  }
+  .about-me-text-2 {
+    display:none;
+   }
+
+
+}
+
+@media (min-width: 1200px) {
+
+  .about-me{
+    width: 78%;
+  }
+  .about-me-text {
+    width: 658px;
+  }
 }

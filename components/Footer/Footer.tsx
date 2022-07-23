@@ -26,8 +26,8 @@ export default React.memo<FooterProps>(function Footer(){
              </div>
              <div className={styles['nav']}>
                 <Link href='#'>story</Link>
-                <Link href='#'>story</Link>
-                <Link href='#'>story</Link>
+                <Link href='#'>collection</Link>
+                <Link href='#'>mint</Link>
                 <Link href='#'><Image src={twitter} alt='Twitter'/></Link>
                 <Link href='#'><Image src={discord} alt='Discord'/></Link>
                 </div>

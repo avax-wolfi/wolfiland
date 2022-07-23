@@ -1,3 +1,11 @@
 .container {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media(min-width:990px){
+   .container{
+     flex-direction: row;
+   }
 }
