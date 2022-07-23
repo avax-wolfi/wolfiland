@@ -9,8 +9,44 @@ import connectWallet from "../../public/icons/connect wallet.svg";
 import styles from "./Header.module.css";
 import Link from "next/link";
 import Pad from "../Pad";
+import { useConnect } from "../../hooks/useConnect";
+import { connectorsByName } from "../../pages/_app";
 
 export interface HeaderProps {}
+
+export function ConnectButton() {
+  const {
+    activate,
+    activatingConnector,
+    connector,
+    context,
+    error,
+    setActivatingConnector,
+    triedEager,
+  } = useConnect();
+  const currentConnector = connectorsByName["Connect With Metamask"];
+  const activating = currentConnector === activatingConnector;
+  const connected = currentConnector === connector;
+  const disabled = !triedEager || !!activatingConnector || connected || !!error;
+
+  // TODO: insert a varation for connected
+  return disabled ? (
+    <>{activating ? "Connecting" : connected ? "Connected" : "Connect"}</>
+  ) : (
+    <button
+      className={styles["connect-btn"]}
+      disabled={disabled}
+      onClick={() => {
+        setActivatingConnector(currentConnector);
+        activate(connectorsByName["Connect With Metamask"]);
+      }}
+    >
+      <a className="d-flex justify-content-center  " style={{ top: 0 }}>
+        <Image src={connectWallet} alt="Connect wallet" />
+      </a>
+    </button>
+  );
+}
 
 export default React.memo<HeaderProps>(function Header() {
   return (
@@ -28,51 +64,33 @@ export default React.memo<HeaderProps>(function Header() {
           alt="Menu"
         />
 
-      
-          {/* OPTIONS LINKS */}
-          <div className={styles["nav-options"]}>
-            <a
-              
-             
-              href="#"
-            >
-              story
-            </a>
-            <a className="nav-link text-white text-uppercase" href="#">
-              collection
-            </a>
-            <a className="nav-link text-white text-uppercase" href="#">
-              mint
-            </a>
-          </div>
-        
-          {/* SOCIAL LINKS */}
-          <div
-            className={
-              styles["social-links"]
-            }
+        {/* OPTIONS LINKS */}
+        <div className={styles["nav-options"]}>
+          <a href="#">story</a>
+          <a className="nav-link text-white text-uppercase" href="#">
+            collection
+          </a>
+          <a className="nav-link text-white text-uppercase" href="#">
+            mint
+          </a>
+        </div>
+
+        {/* SOCIAL LINKS */}
+        <div className={styles["social-links"]}>
+          <a
+            className="d-flex justify-content-center me-2 mt-3 mb-3 mb-lg-0 mt-md-0"
+            href="#"
           >
-            <a
-              className="d-flex justify-content-center me-2 mt-3 mb-3 mb-lg-0 mt-md-0"
-              href="#"
-            >
-              <Image src={discord} alt="Discord" />
-            </a>
-            <a
-              className="d-flex justify-content-center me-2 mb-3 mb-lg-0 mt-md-0"
-              href={""}
-            >
-              <Image src={twitter} alt="Twitter" />
-            </a>
-            <a
-              className="d-flex justify-content-center  "
-              style={{ top: 0 }}
-              href="#"
-            >
-              <Image src={connectWallet} alt="Connect wallet" />
-            </a>
-          </div>
-       
+            <Image src={discord} alt="Discord" />
+          </a>
+          <a
+            className="d-flex justify-content-center me-2 mb-3 mb-lg-0 mt-md-0"
+            href={""}
+          >
+            <Image src={twitter} alt="Twitter" />
+          </a>
+          <ConnectButton />
+        </div>
       </nav>
     </header>
   );
