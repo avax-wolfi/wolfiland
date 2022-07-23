@@ -26,7 +26,7 @@ export default function Document() {
 
       </Head>
 
-      <body style={{ maxWidth: '1920px', margin: '0 auto' }}>
+      <body style={{ }}>
         <Main />
         <NextScript />
       </body>

@@ -1,5 +1,6 @@
-import Image from "next/image";
 import React from "react";
+import Image from "next/image";
+
 
 import tv from "../../public/icons/Group.svg";
 import mari from "../../public/img/mar 1.svg";
@@ -35,7 +36,7 @@ export default React.memo<AboutMeProps>(function AboutMe() {
           fund to support me as an artist.
         </p>
         
-        <video className={styles['rectangle']} src="../../public/videos/Creation Video-1.mp4" controls />
+        <video className={styles['rectangle']} src={require('../../public/videos/Creation Video-1.webm')} controls />
 
 
         <p className={styles["about-me-text-2"]}>
@@ -46,10 +47,14 @@ export default React.memo<AboutMeProps>(function AboutMe() {
         </p>
       </div>
       <div className={styles["tv"]}>
-      <video src="../../public/videos/Creation Video-1.mp4" controls width={640} height={330}></video>
+      <div className={styles['video']}>
+      <video  src={require('../../public/videos/Creation Video-1.webm')} controls width={642.5} ></video>
+     </div>
       </div>
       <Pad amt={200} />
-      <div className={styles['separator']}><Image src={separator} alt="Separator" /></div>
+      <div className={styles['separator']}>
+           <Image src={separator} alt="Separator" />
+      </div>
     </main>
   );
 });

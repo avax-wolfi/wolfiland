@@ -2,7 +2,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+ 
   width: 100%;
+  height: 100%;
+  position: relative;
 }
 
 .magenta {
@@ -10,6 +13,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-top:2px solid #ec408b !important;
+  border-bottom:2px solid #ec408b !important;
+  margin-top: -1px !important;
+  margin-bottom: -1px !important;
 }
 
 .wolfi-collection {
@@ -64,11 +71,16 @@
 }
 
 .top-waves {
-  width: 100%;
+ 
+  margin-bottom: -1px !important;
+  
+  
+  
 }
 
 .down-waves {
   transform: rotate(-180deg);
+  border-bottom:-1px solid #ec408b !important;
 }
 
 @media (min-width: 990px) {
