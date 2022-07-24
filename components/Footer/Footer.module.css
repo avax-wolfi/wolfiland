@@ -5,6 +5,7 @@
     flex-direction: column;
     justify-content: center;
     height: 320px;
+    font-family: 'Fjalla One', sans-serif;
 }
 
 .nav-footer{
@@ -20,6 +21,7 @@
     flex-direction: column;
     color: white;
     margin-bottom: 20px;
+    font-family: 'Inter', sans-serif;
 }
 
 .nav {
@@ -32,6 +34,12 @@
     width: 100%;
     height: 140px;
     justify-content:space-around  ;
+}
+
+.nav a {
+    color: white !important;
+  text-decoration: none !important;   
+    
 }
 
 
@@ -59,10 +67,13 @@
        color: white;
        text-transform: uppercase;
        flex-direction: row;
-       width: 25%;
+       width: 30%;
        display: flex;
        justify-content: space-between;
+
    }
+
+   
    
    
 }
