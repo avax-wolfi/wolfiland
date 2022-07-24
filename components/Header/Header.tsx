@@ -6,6 +6,7 @@ import barLogo from "../../public/icons/menu logo 1.png";
 import discord from "../../public/icons/discord 1.svg";
 import twitter from "../../public/icons/twitter 1.svg";
 import connectWallet from "../../public/icons/connect wallet.svg";
+import connectWalletIcon from "../../public/icons/connect-wallet-icon.svg";
 import styles from "./Header.module.css";
 import Link from "next/link";
 import Pad from "../Pad";
@@ -30,9 +31,7 @@ export function ConnectButton() {
   const disabled = !triedEager || !!activatingConnector || connected || !!error;
 
   // TODO: insert a varation for connected
-  return disabled ? (
-    <>{activating ? "Connecting" : connected ? "Connected" : "Connect"}</>
-  ) : (
+  return (
     <button
       className={styles["connect-btn"]}
       disabled={disabled}
@@ -41,9 +40,16 @@ export function ConnectButton() {
         activate(connectorsByName["Connect With Metamask"]);
       }}
     >
-      <a className="d-flex justify-content-center  " style={{ top: 0 }}>
-        <Image src={connectWallet} alt="Connect wallet" />
-      </a>
+      <div className={styles["connect-btn-text-container-box"]}>
+        <Image src={connectWalletIcon} />
+        <div className={styles["connect-btn-text"]}>
+          {activating
+            ? "CONNECTING"
+            : connected
+            ? "CONNECTED"
+            : "CONNECT WALLET"}
+        </div>
+      </div>
     </button>
   );
 }
@@ -89,6 +95,8 @@ export default React.memo<HeaderProps>(function Header() {
           >
             <Image src={twitter} alt="Twitter" />
           </a>
+        </div>
+        <div className="connect-button-container">
           <ConnectButton />
         </div>
       </nav>

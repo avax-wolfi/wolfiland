@@ -2,12 +2,6 @@
   display: none;
 }
 
-
-.connect-btn{
-  background: transparent;
-  border: none;
-}
-
 @media(min-width:990px){
 
   .container {
@@ -18,8 +12,6 @@
     position: relative;
     
   }
-
- 
   
   .nav {
     min-height: 118px;
@@ -44,7 +36,7 @@
   }
   
   .social-links {
-    width: 300px;
+    width: 200px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -52,6 +44,36 @@
   
   .social-link-item {
     margin-bottom: 10px;
+  }
+
+  .connect-button-container {
+    position: relative;
+  }
+
+  .connect-btn{
+    position: absolute;
+    background: #492F7A;
+    border: none;
+    top: -1px;
+    right: 10%;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    padding-top: 2rem;
+    padding-bottom: .5rem;
+  }
+
+  .connect-btn-text-container-box {
+    display: flex;
+    padding: 0.25rem;
+    border: 1px solid #FFE154;
+    border-radius: .5rem;
+    color: white;
+  }
+
+  .connect-btn-text {
+    max-width: 50px;
+    word-break: break-word;
+    margin-left: 0.5rem;
   }
   
 }

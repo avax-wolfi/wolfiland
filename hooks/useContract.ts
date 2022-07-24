@@ -50,7 +50,7 @@ export function useMulticallContract(): Contract | null {
   );
 }
 
-export function uselMintingContract(): Contract | null {
+export function useMintingContract(): Contract | null {
   const { chainId } = useActiveWeb3React();
   return useContract(
     MINTING_CONTRACT[chainId || ChainId.AVALANCHE],
