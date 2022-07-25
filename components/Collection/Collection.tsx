@@ -26,6 +26,9 @@ export default React.memo<CollectionProps>(function Collection() {
           <div className={styles["desc-collection"]}>
             <Image src={wolfiCollection} alt="Wolfi" />
             <Pad amt={60} />
+            <div className={styles["wolfi-sm"]}>
+            <Image src={wolfiSm} alt="Wolfi" />
+          </div>
             <p>
               This collection works as a fund to support me as an artist. If you
               use wolfi daily for your memes or posts, a mint from this
@@ -43,9 +46,7 @@ export default React.memo<CollectionProps>(function Collection() {
 
           </div>
 
-          <div className={styles["wolfi-sm"]}>
-            <Image src={wolfiSm} alt="Wolfi" />
-          </div>
+        
         </div>
         <Pad amt={100} />
         <div className={styles["wolfi-benefits"]}>
