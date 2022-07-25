@@ -95,9 +95,9 @@ export default React.memo<HeaderProps>(function Header() {
           >
             <Image src={twitter} alt="Twitter" />
           </a>
-        </div>
-        <div className="connect-button-container">
-          <ConnectButton />
+          <div className={styles["connect-button-container"]}>
+            <ConnectButton />
+          </div>
         </div>
       </nav>
     </header>
