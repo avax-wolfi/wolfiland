@@ -23,11 +23,20 @@ export default function Document() {
   <meta property="twitter:image" content="https://www.wolfi.land/public/img/og-wolfi.png" />
 
 
+ 
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin='true' />
+  <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Inter&display=swap" rel="stylesheet" />
+
+
+
+
 
 
       </Head>
 
-      <body style={{ }}>
+      <body style={{margin:0}}>
         <Main />
         <NextScript />
       </body>
