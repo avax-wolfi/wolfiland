@@ -36,7 +36,7 @@
   }
   
   .social-links {
-    width: 200px;
+    width: 300px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -48,14 +48,12 @@
 
   .connect-button-container {
     position: relative;
+    margin-top: -3.1rem;
   }
 
   .connect-btn{
-    position: absolute;
     background: #492F7A;
     border: none;
-    top: -1px;
-    right: 10%;
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
     padding-top: 2rem;
@@ -71,7 +69,7 @@
   }
 
   .connect-btn-text {
-    max-width: 50px;
+    max-width: 5rem;
     word-break: break-word;
     margin-left: 0.5rem;
   }
