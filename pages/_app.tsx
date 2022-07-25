@@ -13,6 +13,7 @@ import store from "../state";
 import ApplicationUpdater from "../state/application/updater";
 import TransactionUpdater from "../state/transactions/updater";
 import MulticallUpdater from "../state/multicall/updater";
+import { ConnectButton } from "../components/Connect";
 
 export enum ConnectorNames {
   Injected = "Connect With Metamask",

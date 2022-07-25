@@ -1,3 +1,8 @@
+@font-face {
+  font-family: fjallaone-regular;
+  src: url(/fonts/FjallaOne-Regular.ttf);
+}
+
 *{
-  
+  font-family: 'fjallaone-regular';
 }
