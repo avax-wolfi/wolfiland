@@ -29,8 +29,10 @@
 }
 
 .right-box h1 {
-  text-transform: uppercase;
   color: #3D2B7D;
+  font-family: 'Fjalla One';
+  font-weight: 300;
+  text-transform: uppercase;
 }
 
 @media (min-width: 990px) {

@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
- 
+
   width: 100%;
   height: 100%;
   position: relative;
@@ -13,8 +13,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-top:2px solid #ec408b !important;
-  border-bottom:2px solid #ec408b !important;
+  border-top: 2px solid #ec408b !important;
+  border-bottom: 2px solid #ec408b !important;
   margin-top: -1px !important;
   margin-bottom: -1px !important;
 }
@@ -33,11 +33,23 @@
   width: 100%;
 }
 
+.wolfi-sm{
+   display: flex;
+   justify-content: center;
+}
+
+.wolfi {
+  display: none !important;
+  align-self: center !important;
+}
+
 .desc-collection p {
   color: white;
   width: 300px;
-  text-align: center;
+  text-align: left;
   align-self: center;
+  font-family: "Inter", sans-serif;
+  margin-bottom: 40px;
 }
 
 .wolfi-benefits {
@@ -45,12 +57,11 @@
   flex-direction: column;
 }
 
-.card-group{
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   width: 100%;
-   
+.card-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 .card {
   display: flex !important;
@@ -58,47 +69,52 @@
   align-items: center;
   justify-content: space-around;
   color: white;
-  max-width: 320px;
+  max-width: 269px;
   height: 347px;
   background: #472d77;
   border-radius: 27px;
   margin-bottom: 20px;
+  font-family: "Inter", sans-serif;
 }
 
-.card-img{
-    
-}
-
-.card p{
-   width: 90%;
-   margin: 0;
-   text-align: center;
+.card p {
+  width: 90%;
+  margin: 0;
+  text-align: center;
+  height: 140px;
 }
 
 .top-waves {
- 
   margin-bottom: -1px !important;
-  
-  
-  
 }
 
 .down-waves {
   transform: rotate(-180deg);
-  border-bottom:-1px solid #ec408b !important;
+  border-bottom: -1px solid #ec408b !important;
 }
 
 @media (min-width: 990px) {
-  
   .wolfi-collection {
     flex-direction: row;
     width: 90%;
+
+  }
+
+  .wolfi {
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  .wolfi-sm {
+    display: none !important;
+
   }
 
   .desc-collection p {
     width: 572px;
     align-self: unset;
     align-self: center;
+    margin-bottom: unset;
   }
 
   .wolfi-benefits {
@@ -111,15 +127,15 @@
   .card-group {
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    width: 90%;
+    justify-content: space-around;
+    width: 100%;
   }
 
   .card {
     display: flex;
     flex-direction: column;
     align-items: center;
-   
+
     color: white;
     width: 22%;
     height: 347px;
@@ -130,6 +146,16 @@
   .card p {
     width: 90%;
   }
+}
 
-  
+@media (min-width: 1100px) {
+  .wolfi-collection {
+    width: 1026px;
+  }
+}
+
+@media (min-width: 1260px) {
+  .card-group {
+    width: 1220px;
+  }
 }

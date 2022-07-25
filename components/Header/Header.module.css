@@ -10,11 +10,11 @@
     display: flex;
     justify-content: center;
     position: relative;
+    font-family: 'Fjalla One', sans-serif;
     
   }
   
   .nav {
-    min-height: 118px;
     width: 85%;
     display: flex;
     justify-content: space-between;
@@ -31,8 +31,10 @@
   }
   
   .nav-options a{
-    color: white;
+    color: white !important;
     text-transform: uppercase;
+    text-decoration: none !important;
+    font-size: 22px;
   }
   
   .social-links {

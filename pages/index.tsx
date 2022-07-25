@@ -7,6 +7,7 @@ import Header from '../components/Header/Header'
 import WalletSection from '../components/WalletSection/WalletSection'
 import Welcome from '../components/Welcome/Welcome'
 
+
 const Home: NextPage = () => {
   
   return (
