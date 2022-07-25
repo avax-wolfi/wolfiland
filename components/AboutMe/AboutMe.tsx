@@ -51,7 +51,7 @@ export default React.memo<AboutMeProps>(function AboutMe() {
       <video  src={require('../../public/videos/Creation Video-1.webm')} controls width={642.5} ></video>
      </div>
       </div>
-      <Pad amt={200} />
+      <Pad amt={50} />
       <div className={styles['separator']}>
            <Image src={separator} alt="Separator" />
       </div>
