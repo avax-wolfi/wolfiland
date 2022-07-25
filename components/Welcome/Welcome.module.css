@@ -30,7 +30,9 @@
 
 .right-box h1 {
   color: #3D2B7D;
-  font-family: 'Inter';
+  font-family: 'Fjalla One';
+  font-weight: 300;
+  text-transform: uppercase;
 }
 
 @media (min-width: 990px) {

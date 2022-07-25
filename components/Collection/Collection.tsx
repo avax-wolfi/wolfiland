@@ -90,7 +90,7 @@ export default React.memo<CollectionProps>(function Collection() {
               <p>A exclusive digital artbook of wolfi (TBA).</p>
             </div>
           </div>
-          <Pad amt={150} />
+          <Pad amt={30} />
         </div>
       </div>
       <Image className={styles["down-waves"]} src={magentaWaves} alt="" />
