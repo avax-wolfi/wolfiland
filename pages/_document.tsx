@@ -36,7 +36,7 @@ export default function Document() {
 
       </Head>
 
-      <body style={{}}>
+      <body style={{margin:0}}>
         <Main />
         <NextScript />
       </body>
