@@ -1,6 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
 import mint from '../../public/icons/mint now 1.png'
+import mintSm from '../../public/img/mint now 1-sm.svg'
+
 import styles from './Welcome.module.css'
 import Pad from '../Pad'
 
@@ -13,12 +15,14 @@ export default React.memo<WelcomeProps>(function Welcome() {
         <div className={styles['left-box']}></div>
       
         <div className={styles['right-box']}>
-          <h1>welcome to</h1>
+          <h1 style={{fontSize:'20px'}}>welcome to</h1>
           <Pad amt={190} />
           <div
             className={styles['img-div']}
           >
-            <Image className={styles['mint-now']} src={mint} alt="Mint Now" />
+            <div className={styles['mint-now']} ><Image src={mint} alt="Mint Now" /></div>
+            <div className={styles['mint-now-sm']} ><Image src={mintSm} alt="Mint Now" /></div>
+
           </div>
         </div>
       </div>

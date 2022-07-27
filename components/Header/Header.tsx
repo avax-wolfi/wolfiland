@@ -59,16 +59,14 @@ export default React.memo<HeaderProps>(function Header() {
     <header className={styles["container"]}>
       <nav className={styles["nav"]}>
         {/* MENU ICON */}
-        <Image
-          className="navbar-brand navbar-toggler"
-          data-bs-toggle="collapse"
-          data-bs-target="#headerNavbar"
-          aria-controls="headerNavbar"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          src={barLogo}
-          alt="Menu"
-        />
+        <div className={styles['nav-icon']}>
+         
+          <Image
+            className="navbar-brand navbar-toggler"
+            src={barLogo}
+            alt="Menu"
+          />
+        </div>
 
         {/* OPTIONS LINKS */}
         <div className={styles["nav-options"]}>
