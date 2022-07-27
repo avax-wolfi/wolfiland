@@ -36,7 +36,7 @@ export default React.memo<AboutMeProps>(function AboutMe() {
           fund to support me as an artist.
         </p>
         
-        <video className={styles['rectangle']} src={require('../../public/videos/Creation Video-1.webm')} controls />
+        <video className={styles['rectangle']} src={require('../../public/videos/CreationVideoV2.mp4')} controls />
 
 
         <p className={styles["about-me-text-2"]}>
@@ -46,11 +46,11 @@ export default React.memo<AboutMeProps>(function AboutMe() {
           modifications to make it unique.
         </p>
       </div>
-      <div className={styles["tv"]}>
-      <div className={styles['video']}>
-      <video  src={require('../../public/videos/Creation Video-1.webm')} controls width={642.5} ></video>
-     </div>
-      </div>
+    
+    
+      <video  className={styles['rectangle-xl']} src={require('../../public/videos/CreationVideoV2.mp4')} controls   ></video>
+     
+    
       <Pad amt={50} />
       <div className={styles['separator']}>
            <Image src={separator} alt="Separator" />

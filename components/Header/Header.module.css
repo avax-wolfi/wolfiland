@@ -15,18 +15,26 @@
   }
   
   .nav {
-    width: 85%;
+    width: 90%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around ;
     align-items: center;
+  }
+
+  .nav-icon{
+
+     width: 320px;
+     display: flex;
+     justify-content: center  ;
   }
   
   
   .nav-options {
-    width: 320px;
+    width:320px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+   
     
   }
   
@@ -38,10 +46,11 @@
   }
   
   .social-links {
-    width: 300px;
+    width: 320px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
   }
   
   .social-link-item {

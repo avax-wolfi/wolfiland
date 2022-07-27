@@ -14,9 +14,6 @@
   padding-bottom: 70px;
 }
 
-.tv {
-  display: none;
-}
 
 .about-me {
   display: flex;
@@ -28,10 +25,15 @@
   display: none !important;
 }
 
+.rectangle-xl{
+
+   display: none;
+}
+
 .rectangle {
   width: 100%;
   height: 160px;
-  background-color: black;
+  
 }
 
 .about-me-text,
@@ -84,22 +86,13 @@
     text-align: left;
   }
 
-  .tv {
-    display: flex;
-    background-image: url("../../public/icons/Group.svg");
-    width: 954px;
-    height: 727px;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-  }
+  .rectangle{display: none;}
 
-  .video {
-    height: 61%;
-    width: 81.7%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
+  .rectangle-xl{
+     display: unset;
+     width: 640px;
+     align-self: center;
+     margin-top: 40px;
   }
 
   .video video {
@@ -110,9 +103,7 @@
     outline: none;
   }
 
-  .rectangle {
-    display: none;
-  }
+  
   .about-me-text-2 {
     display: none;
   }
