@@ -1,6 +1,8 @@
 import React from "react";
 import Image from "next/image";
 
+import { videoJs as VideoJS } from "../VideoJs/VideoJS";
+import videojs, { VideoJsPlayerOptions } from 'video.js'
 
 import tv from "../../public/icons/Group.svg";
 import mari from "../../public/img/mar 1.svg";
@@ -13,6 +15,35 @@ import Pad from "../Pad";
 export interface AboutMeProps {}
 
 export default React.memo<AboutMeProps>(function AboutMe() {
+
+  const playerRef = React.useRef(null);
+
+  const videoJsOptions:VideoJsPlayerOptions = {
+    autoplay: true,
+    controls: true,
+    responsive: true,
+    bigPlayButton:true,
+    controlBar:false,
+    fluid: true,
+    sources: [{
+      src: require('../../public/videos/CreationVideoV2.mp4'),
+      type: 'video/mp4'
+    }]
+  };
+
+  const handlePlayerReady = (player) => {
+    playerRef.current = player;
+   
+    // You can handle player events here, for example:
+    player.on('waiting', () => {
+      videojs.log('player is waiting');
+    });
+
+    player.on('dispose', () => {
+      videojs.log('player will dispose');
+    });
+  };
+
   return (
     <main className={styles["container"]}>
       <div className={styles["header"]}>
@@ -36,7 +67,8 @@ export default React.memo<AboutMeProps>(function AboutMe() {
           fund to support me as an artist.
         </p>
         
-        <video className={styles['rectangle']} src={require('../../public/videos/CreationVideoV2.mp4')} controls />
+       
+         />
 
 
         <p className={styles["about-me-text-2"]}>
@@ -48,13 +80,11 @@ export default React.memo<AboutMeProps>(function AboutMe() {
       </div>
     
     
-      <video  className={styles['rectangle-xl']} src={require('../../public/videos/CreationVideoV2.mp4')} controls   ></video>
+      {/* <video  className={styles['rectangle-xl']} src={require('../../public/videos/CreationVideoV2.mp4')}    ></video> */}
      
     
       <Pad amt={50} />
-      <div className={styles['separator']}>
-           <Image src={separator} alt="Separator" />
-      </div>
+      <VideoJS options={videoJsOptions} onReady={handlePlayerReady} themeName={'city'}  />
     </main>
   );
 });

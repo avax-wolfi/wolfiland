@@ -16,7 +16,9 @@ export default React.memo<WelcomeProps>(function Welcome() {
       
         <div className={styles['right-box']}>
           <h1 style={{fontSize:'20px'}}>welcome to</h1>
-          <Pad amt={190} />
+            <div className={styles['pad-xl']}><Pad amt={190}  /></div>
+            <div className={styles['pad-sm']}><Pad amt={100}/></div>
+          
           <div
             className={styles['img-div']}
           >

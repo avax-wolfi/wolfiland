@@ -1,0 +1,11 @@
+.wolfi-video{
+     width: 80% !important;  
+    
+}
+
+@media(min-width:990px){
+      
+    .wolfi-video{
+         width: 640px !important;
+    }
+}
