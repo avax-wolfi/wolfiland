@@ -5,8 +5,7 @@ import { videoJs as VideoJS } from "../VideoJs/VideoJS";
 import videojs, { VideoJsPlayerOptions } from 'video.js'
 
 import tv from "../../public/icons/Group.svg";
-import mari from "../../public/img/mar 1.svg";
-import mari2 from "../../public/img/mar-2.svg";
+import mari from "../../public/img/mari.png";
 import storyLogo from "../../public/icons/storyLogo.svg";
 import separator from "../../public/icons/Avax separador.svg";
 import styles from "./AboutMe.module.css";
@@ -56,7 +55,7 @@ export default React.memo<AboutMeProps>(function AboutMe() {
         </div>
         <div className={styles["frame"]}>
           {" "}
-          <Image src={mari2} />
+          <Image src={mari} />
         </div>
         <p className={styles["about-me-text"]}>
           I am Mar, the creator of wolfi, the most popular mascot among the
@@ -68,7 +67,7 @@ export default React.memo<AboutMeProps>(function AboutMe() {
         </p>
         
        
-         />
+         
 
 
         <p className={styles["about-me-text-2"]}>

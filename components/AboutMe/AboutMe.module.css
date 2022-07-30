@@ -24,6 +24,13 @@
 
 .frame {
   display: none !important;
+  width: 320px;
+}
+
+.frame-sm{
+   width: 240px;
+   display: flex;
+   justify-content: center;
 }
 
 .rectangle-xl{
@@ -83,6 +90,7 @@
     margin: 0;
     width: 550px;
     text-align: left;
+    margin-left: 50px;
   }
 
   
@@ -114,7 +122,11 @@
     width: 1024px;
   }
 
+.frame{
+  margin-right:50px;
+}
   .about-me-text {
     width: 658px;
+   
   }
 }

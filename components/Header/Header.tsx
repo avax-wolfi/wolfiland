@@ -6,7 +6,7 @@ import barLogo from "../../public/icons/menu logo 1.png";
 import discord from "../../public/icons/discord 1.svg";
 import twitter from "../../public/icons/twitter 1.svg";
 import connectWallet from "../../public/icons/connect wallet.svg";
-import connectWalletIcon from "../../public/icons/connect-wallet-icon.svg";
+import connectWalletIcon from "../../public/img/connect-2.svg";
 import styles from "./Header.module.css";
 import Link from "next/link";
 import Pad from "../Pad";
