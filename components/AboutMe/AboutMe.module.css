@@ -80,12 +80,14 @@
 }
 
 @media (min-width: 990px) {
+  
   .about-me {
     flex-direction: row;
     justify-content: space-between;
     width: 84%;
     align-items: center;
   }
+
   .about-me-text {
     margin: 0;
     width: 550px;
@@ -118,6 +120,7 @@
 }
 
 @media (min-width: 1200px) {
+  
   .about-me {
     width: 1024px;
   }
