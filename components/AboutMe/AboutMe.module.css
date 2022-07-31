@@ -41,6 +41,7 @@ margin-bottom: 30px;
 .frame-sm{
    width: 240px;
    display: flex;
+   border:8px solid    #FFE154;
    justify-content: center;
    box-shadow: -20px 19px 0px 0px rgba(57,31,107,0.75);
 -webkit-box-shadow: -20px 19px 0px 0px rgba(57,31,107,0.75);
