@@ -14,49 +14,44 @@
   padding-bottom: 70px;
 }
 
-.separator{
-   width: 320px;
+.separator {
+  width: 320px;
 }
-
 
 .about-me {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+}
+
+.link a {
+  color: white !important;
 }
 
 .frame {
   display: none !important;
   width: 320px;
-  border:8px solid    #FFE154;
-  box-shadow: -20px 19px 0px 0px rgba(57,31,107,0.75);
--webkit-box-shadow: -20px 19px 0px 0px rgba(57,31,107,0.75);
--moz-box-shadow: -20px 19px 0px 0px rgba(57,31,107,0.75);
-margin-bottom: 30px;
- 
-}
- 
-
-.frame-sm{
-   width: 240px;
-   display: flex;
-   border:8px solid    #FFE154;
-   justify-content: center;
-   box-shadow: -20px 19px 0px 0px rgba(57,31,107,0.75);
--webkit-box-shadow: -20px 19px 0px 0px rgba(57,31,107,0.75);
--moz-box-shadow: -20px 19px 0px 0px rgba(57,31,107,0.75);
-margin-bottom: 30px;
+  border: 8px solid #ffe154;
+  box-shadow: -20px 19px 0px 0px rgba(57, 31, 107, 0.75);
+  -webkit-box-shadow: -20px 19px 0px 0px rgba(57, 31, 107, 0.75);
+  -moz-box-shadow: -20px 19px 0px 0px rgba(57, 31, 107, 0.75);
+  margin-bottom: 30px;
 }
 
-.rectangle-xl{
-
-   display: none;
+.frame-sm {
+  width: 240px;
+  display: flex;
+  border: 8px solid #ffe154;
+  justify-content: center;
+  box-shadow: -20px 19px 0px 0px rgba(57, 31, 107, 0.75);
+  -webkit-box-shadow: -20px 19px 0px 0px rgba(57, 31, 107, 0.75);
+  -moz-box-shadow: -20px 19px 0px 0px rgba(57, 31, 107, 0.75);
+  margin-bottom: 30px;
 }
 
-
-
-
+.rectangle-xl {
+  display: none;
+}
 
 .about-me-text,
 .about-me-text-2 {
@@ -96,7 +91,6 @@ margin-bottom: 30px;
 }
 
 @media (min-width: 990px) {
-  
   .about-me {
     flex-direction: row;
     justify-content: space-between;
@@ -111,14 +105,15 @@ margin-bottom: 30px;
     margin-left: 50px;
   }
 
-  
-  .rectangle{display: none;}
+  .rectangle {
+    display: none;
+  }
 
-  .rectangle-xl{
-     display: unset;
-     width: 640px;
-     align-self: center;
-     margin-top: 70px;
+  .rectangle-xl {
+    display: unset;
+    width: 640px;
+    align-self: center;
+    margin-top: 70px;
   }
 
   .video video {
@@ -129,23 +124,20 @@ margin-bottom: 30px;
     outline: none;
   }
 
-  
   .about-me-text-2 {
     display: none;
   }
 }
 
 @media (min-width: 1200px) {
-  
   .about-me {
     width: 1024px;
   }
 
-.frame{
-  margin-right:50px;
-}
+  .frame {
+    margin-right: 50px;
+  }
   .about-me-text {
     width: 658px;
-   
   }
 }

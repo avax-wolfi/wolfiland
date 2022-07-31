@@ -10,6 +10,7 @@ import storyLogo from "../../public/icons/storyLogo.svg";
 import separator from "../../public/icons/Avax separador.svg";
 import styles from "./AboutMe.module.css";
 import Pad from "../Pad";
+import Link from "next/link";
 
 export interface AboutMeProps {}
 
@@ -84,6 +85,8 @@ export default React.memo<AboutMeProps>(function AboutMe() {
     
       <Pad amt={50} />
       <VideoJS options={videoJsOptions} onReady={handlePlayerReady} themeName={'city'}  />
+      <Pad amt={25} />
+      <a href={'#'} style={{color:'white'}}>Download the original proocreate file to verify aunthenticity</a>
       <Pad amt={150} />
       <div className={styles['separator']}>
       <Image src={separator} />
