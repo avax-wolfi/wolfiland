@@ -84,6 +84,10 @@ export default React.memo<AboutMeProps>(function AboutMe() {
     
       <Pad amt={50} />
       <VideoJS options={videoJsOptions} onReady={handlePlayerReady} themeName={'city'}  />
+      <Pad amt={150} />
+      <div className={styles['separator']}>
+      <Image src={separator} />
+      </div>
     </main>
   );
 });

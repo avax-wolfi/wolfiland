@@ -1,5 +1,5 @@
 .container {
-height: 100vh;
+  height: 370px;
   width: 100%;
   background: url("../../public/img/hero-sm.svg") center bottom ,
     url("../../public/img/banner-sm.svg") center ;
@@ -37,7 +37,10 @@ height: 100vh;
   font-family: 'Fjalla One';
   font-weight: 300;
   text-transform: uppercase;
+  font-size: 32px;
 }
+
+
 
 .mint-now{
    display: none;

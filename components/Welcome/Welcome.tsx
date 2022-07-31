@@ -14,7 +14,7 @@ export default React.memo<WelcomeProps>(function Welcome() {
       <div className={styles['welcome']}>
 
         <div className={styles['welcome-sm']}>
-        <h1 style={{fontSize:'20px'}}>welcome to</h1>
+        <h1>welcome to</h1>
 
         <div className={styles['wolfiland-sm']}>
           <Image src={wolfilandSm} />
@@ -23,9 +23,7 @@ export default React.memo<WelcomeProps>(function Welcome() {
         <div className={styles['left-box']}></div>
       
         <div className={styles['right-box']}>
-          <h1 style={{fontSize:'20px'}}>welcome to</h1>
-            <div className={styles['pad-xl']}><Pad amt={190}  /></div>
-            <div className={styles['pad-sm']}><Pad amt={100}/></div>
+        
           
           <div
             className={styles['img-div']}
