@@ -23,14 +23,14 @@
 
   .nav-icon{
 
-     width: 320px;
+     width: 200px;
      display: flex;
      justify-content: center  ;
   }
   
   
   .nav-options {
-    width:320px;
+    width:250px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -46,7 +46,7 @@
   }
   
   .social-links {
-    width: 320px;
+    width: 400px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -83,6 +83,7 @@
     max-width: 6rem;
     word-break: break-word;
     margin-left: 0.5rem;
+    
   }
   
 }
