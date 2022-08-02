@@ -1,20 +1,25 @@
-  import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from "react";
 
-import Image from 'next/image'
-import max from '../../public/img/max.svg'
-import min from '../../public/img/min.svg'
-import connectWallet from '../../public/img/connect-wallet.svg'
-import wolfiLand from '../../public/icons/logo big 1.svg'
+import Image from "next/image";
+import max from "../../public/img/max.svg";
+import min from "../../public/img/min.svg";
+import connectWallet from "../../public/img/connect-wallet.svg";
+import mintNow from "../../public/icons/mint now 1.png";
 
-import styles from './ConnectWallet.module.css'
-import Pad from '../Pad'
-import { useWeb3React } from '@web3-react/core'
-import { formatEther } from "@ethersproject/units";
+import wolfiLand from "../../public/icons/logo big 1.svg";
+
+import styles from "./ConnectWallet.module.css";
+import Pad from "../Pad";
+import { useWeb3React } from "@web3-react/core";
+import { formatEther, formatUnits, parseEther } from "@ethersproject/units";
 import { TransactionResponse } from "@ethersproject/providers";
-import { useMintingContract } from '../../hooks/useContract'
-import { useTransactionAdder } from '../../state/transactions/hooks'
+import {
+  useMintingContract,
+  usePriceCalculatorContract,
+} from "../../hooks/useContract";
+import { useTransactionAdder } from "../../state/transactions/hooks";
 import { BigNumber } from "ethers";
-import { calculateGasMargin } from '../../utils'
+import { calculateGasMargin } from "../../utils";
 
 export interface ConnectWalletProps {}
 
@@ -49,18 +54,18 @@ const Balance = ({ forceRefresh }: { forceRefresh?: number }) => {
   return (
     <div>
       <p>
-      {account ? (
-        <span>Balance: </span>
-      ) : (
-        <span>Connect your wallet to see your balance.</span>
-      )}
-      <span>
-        {balance === null
-          ? "Error"
-          : balance
-          ? `AVAX ${formatEther(balance)}`
-          : ""}
-      </span>
+        {account ? (
+          <span>Balance: </span>
+        ) : (
+          <span>Connect your wallet to see your balance.</span>
+        )}
+        <span>
+          {balance === null
+            ? "Error"
+            : balance
+            ? `AVAX ${formatEther(balance)}`
+            : ""}
+        </span>
       </p>
     </div>
   );
@@ -70,10 +75,12 @@ export default React.memo<ConnectWalletProps>(function ConnectWallet() {
   const [quantity, setQuantityToMint] = useState(1);
   const { chainId, account, library } = useWeb3React();
   const mintingContract = useMintingContract();
+  const priceCalculatorContract = usePriceCalculatorContract();
   const addTransaction = useTransactionAdder();
 
   const [totalSupply, setTotalSupply] = useState("0");
   const [cost, setCost] = useState("0");
+  const [totalCost, setTotalCost] = useState("0");
   const [feedback, setFeedback] = useState("");
   const [forceRefresh, setForceRefresh] = useState(0);
 
@@ -83,10 +90,8 @@ export default React.memo<ConnectWalletProps>(function ConnectWallet() {
 
   const getData = useCallback(async () => {
     setTotalSupply(await mintingContract.totalSupply());
-    
-    // TODO: query price calculator for this
-    // setCost(await mintingContract.MINT_PRICE());
-  }, [mintingContract]);
+    setCost(formatEther(await priceCalculatorContract.getWolfiPriceInAvax()));
+  }, [mintingContract, priceCalculatorContract]);
 
   const mint = async () => {
     if (!chainId || !library || !account) return;
@@ -98,7 +103,7 @@ export default React.memo<ConnectWalletProps>(function ConnectWallet() {
     estimate = mintingContract.estimateGas.mint;
     method = mintingContract.mint;
     args = [quantity.toString()];
-    value = BigNumber.from((+cost * quantity).toString());
+    value = BigNumber.from(parseEther((+cost * quantity).toString()));
 
     setAttemptingMint(true);
     setFeedback("Minting your NFTs...");
@@ -109,8 +114,8 @@ export default React.memo<ConnectWalletProps>(function ConnectWallet() {
           gasLimit: calculateGasMargin(estimatedGasLimit),
         }).then(async (response) => {
           addTransaction(response, {
-            summary: `Mint ${quantity} Rytell ${
-              quantity > 1 ? "Heroes" : "Hero"
+            summary: `Mint ${quantity} Wolfi ${
+              quantity > 1 ? "Tokens" : "Token"
             }`,
           });
 
@@ -139,31 +144,67 @@ export default React.memo<ConnectWalletProps>(function ConnectWallet() {
 
     getData();
   };
-useEffect(() => {
+
+  useEffect(() => {
     if (chainId) {
       getData();
     }
   }, [chainId]);
 
+  useEffect(() => {
+    setTotalCost((+cost * quantity).toString());
+  }, [cost, quantity]);
+
+  const handleChangeQuantity = useCallback((event) => {
+    const {
+      target: { value: quantity },
+    } = event;
+    if (!!quantity && quantity > 0) {
+      setQuantityToMint(quantity);
+    }
+  }, []);
+
+  const handleaAddQuantity = () => {
+    return setQuantityToMint((current) => ++current);
+  };
+  const handleSubstractQuantity = () => {
+    return (
+      !!quantity && quantity > 1 && setQuantityToMint((current) => --current)
+    );
+  };
+
   return (
-    <div className={styles['container']}>
-      <div className={styles['logotype-desc']}>
+    <div className={styles["container"]}>
+      <div className={styles["logotype-desc"]}>
         <Image src={wolfiLand} alt="WolfiLand" />
         <Pad amt={20} row />
         <Balance />
       </div>
-     <Pad amt={40} />
-      <div className={styles['min-max']}>
-        <Image src={max} alt="+" />
-        <Image src={min} alt="-" />
+      <Pad amt={40} />
+      <div className={styles["min-max"]}>
+        <Image src={max} alt="+" onClick={handleaAddQuantity} />
+        <input
+          type="number"
+          name="quantity"
+          id="quantity"
+          value={quantity}
+          step="1"
+          className={styles["hide-arrows"]}
+          onChange={handleChangeQuantity}
+        />
+        <Image src={min} alt="-" onClick={handleSubstractQuantity} />
       </div>
       <Pad amt={40} />
+      {account ? (
+        <Image src={mintNow} alt="Mint" onClick={mint} />
+      ) : (
         <Image src={connectWallet} alt="Connect your Wallet" />
-       <Pad amt={20} />
-      <div className={styles['cost']}>
-        <span>Min Cost:2 AVAX</span>
-        <span>Total Minted:XXXX</span>
+      )}
+      <Pad amt={20} />
+      <div className={styles["cost"]}>
+        <span>Actual Cost: {totalCost} AVAX</span>
+        <span>Total Minted: {formatUnits(totalSupply, "wei")} </span>
       </div>
     </div>
-  )
-})
+  );
+});
