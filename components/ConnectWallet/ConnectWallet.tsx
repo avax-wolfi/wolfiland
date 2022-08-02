@@ -63,7 +63,7 @@ const Balance = ({ forceRefresh }: { forceRefresh?: number }) => {
           {balance === null
             ? "Error"
             : balance
-            ? `AVAX ${formatEther(balance)}`
+            ? `AVAX ${(+formatEther(balance)).toFixed(4)}`
             : ""}
         </span>
       </p>
