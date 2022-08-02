@@ -245,7 +245,7 @@ export default React.memo<ConnectWalletProps>(function ConnectWallet() {
           <span>Connect a wallet to see more info.</span>
         )}
       </div>
-      <p className={styles["cost"]} style={{maxWidth: "28rem"}}>{feedback}</p>
+      <p className={`${styles["cost"]} ${styles["feedback"]}`}>{feedback}</p>
     </div>
     </>
   );

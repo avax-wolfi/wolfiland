@@ -52,6 +52,11 @@
   border-top: 2px solid black;
 }
 
+.feedback {
+  max-width: 18rem;
+  overflow-x: auto;
+}
+
 @media (min-width: 990px) {
   .logotype-desc {
     flex-direction: row;
@@ -75,5 +80,9 @@
     width: 100%;
     flex-direction: row;
     justify-content: space-between;
+  }
+
+  .feedback {
+    max-width: 28rem;
   }
 }
