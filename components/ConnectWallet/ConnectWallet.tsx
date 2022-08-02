@@ -205,6 +205,7 @@ export default React.memo<ConnectWalletProps>(function ConnectWallet() {
         <span>Actual Cost: {totalCost} AVAX</span>
         <span>Total Minted: {formatUnits(totalSupply, "wei")} </span>
       </div>
+      <p className={styles["cost"]}>{feedback}</p>
     </div>
   );
 });
