@@ -3,7 +3,13 @@ import { AddressZero } from "@ethersproject/constants";
 import { Contract } from "@ethersproject/contracts";
 import { JsonRpcSigner, Web3Provider } from "@ethersproject/providers";
 import { BigNumber } from "@ethersproject/bignumber";
-import { Currency, CurrencyAmount, Token, TokenAmount, JSBI } from "@pangolindex/sdk";
+import {
+  Currency,
+  CurrencyAmount,
+  Token,
+  TokenAmount,
+  JSBI,
+} from "@pangolindex/sdk";
 import { parseUnits } from "@ethersproject/units";
 
 // add 10%
@@ -57,26 +63,29 @@ export function getContract(
 }
 
 export const fromIpfsToUrl = (ipfsuri: string) => {
-  const prefix = "https://ipfs.io/ipfs/";
+  const prefix = "https://wolfi.mypinata.cloud/ipfs/";
   const [, cidWithContent] = ipfsuri.split("//");
   return `${prefix}${cidWithContent}`;
 };
 
-export function tryParseAmount(value?: string, currency?: Currency): CurrencyAmount | undefined {
+export function tryParseAmount(
+  value?: string,
+  currency?: Currency
+): CurrencyAmount | undefined {
   if (!value || !currency) {
-    return undefined
+    return undefined;
   }
   try {
-    const typedValueParsed = parseUnits(value, currency.decimals).toString()
-    if (typedValueParsed !== '0') {
+    const typedValueParsed = parseUnits(value, currency.decimals).toString();
+    if (typedValueParsed !== "0") {
       return currency instanceof Token
         ? new TokenAmount(currency, JSBI.BigInt(typedValueParsed))
-        : CurrencyAmount.ether(JSBI.BigInt(typedValueParsed))
+        : CurrencyAmount.ether(JSBI.BigInt(typedValueParsed));
     }
   } catch (error) {
     // should fail if the user specifies too many decimal places of precision (or maybe exceed max uint?)
-    console.debug(`Failed to parse input amount: "${value}"`, error)
+    console.debug(`Failed to parse input amount: "${value}"`, error);
   }
   // necessary for all paths to return a value
-  return undefined
+  return undefined;
 }

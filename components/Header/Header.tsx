@@ -34,7 +34,6 @@ export function ConnectButton() {
 
   const [showWalletModal, setShowWalletModal] = useState(false);
 
-  // TODO: insert a varation for connected
   return (
     <>
       <Wallet

@@ -10,19 +10,19 @@ export interface ImageProps {
 export default React.memo<ImageProps>(function ImageWithLoader({
   src,
   className,
-  forceRemount
+  forceRemount,
 }) {
   const [loading, setLoading] = useState(true);
 
   return (
     <>
-    {loading && <p className={styles["loading-placeholder"]}>loading...</p>}
-    <img
-      src={src}
-      className={`${className} ${loading ? styles["loading"] : ""}`}
-      onLoad={() => setLoading(false)}
-      onError={forceRemount}
-    />
+      {loading && <p className={styles["loading-placeholder"]}>loading...</p>}
+      <img
+        src={src}
+        className={`${className} ${loading ? styles["loading"] : ""}`}
+        onLoad={() => setLoading(false)}
+        onError={forceRemount}
+      />
     </>
   );
 });
