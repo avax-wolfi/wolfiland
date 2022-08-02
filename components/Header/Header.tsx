@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Image from "next/image";
 
@@ -13,6 +13,7 @@ import Link from "next/link";
 import Pad from "../Pad";
 import { useConnect } from "../../hooks/useConnect";
 import { connectorsByName } from "../../pages/_app";
+import Wallet from "../Wallet/Wallet";
 
 export interface HeaderProps {}
 
@@ -31,29 +32,40 @@ export function ConnectButton() {
   const connected = currentConnector === connector;
   const disabled = !triedEager || !!activatingConnector || connected || !!error;
 
+  const [showWalletModal, setShowWalletModal] = useState(false);
+
   // TODO: insert a varation for connected
   return (
-    <button
-      className={styles["connect-btn"]}
-      disabled={disabled}
-      onClick={() => {
-        setActivatingConnector(currentConnector);
-        activate(connectorsByName["Connect With Metamask"]);
-      }}
-    >
-      <div className={styles["connect-btn-text-container-box"]}>
-        <div className={styles["connect-btn-text"]}>
-          {activating ? (
-            "CONNECTING"
-          ) : connected ? (
-            <Image src={viewWallet} />
-          ) : (
-            
-            <Image src={connectWalletIcon} />
-          )}
+    <>
+      <Wallet
+        isModalVisible={showWalletModal}
+        handleOk={() => setShowWalletModal(false)}
+        handleCancel={() => setShowWalletModal(false)}
+      />
+      <button
+        className={styles["connect-btn"]}
+        disabled={disabled}
+        onClick={() => {
+          setActivatingConnector(currentConnector);
+          activate(connectorsByName["Connect With Metamask"]);
+        }}
+      >
+        <div className={styles["connect-btn-text-container-box"]}>
+          <div className={styles["connect-btn-text"]}>
+            {activating ? (
+              "CONNECTING"
+            ) : connected ? (
+              <Image
+                src={viewWallet}
+                onClick={() => setShowWalletModal(true)}
+              />
+            ) : (
+              <Image src={connectWalletIcon} />
+            )}
+          </div>
         </div>
-      </div>
-    </button>
+      </button>
+    </>
   );
 }
 

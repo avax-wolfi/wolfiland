@@ -1,0 +1,12 @@
+.wolfi-card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  grid-auto-rows: minmax(100px, auto);
+  padding-bottom: 1rem;
+}
+
+.wolfi-card {
+  height: 100px;
+  width: 100px;
+}

@@ -1,6 +1,8 @@
 import dynamic from "next/dynamic";
 
+import 'antd/dist/antd.css';
 import "../styles/globals.css";
+
 import type { AppProps } from "next/app";
 import Script from "next/script";
 
@@ -13,7 +15,6 @@ import store from "../state";
 import ApplicationUpdater from "../state/application/updater";
 import TransactionUpdater from "../state/transactions/updater";
 import MulticallUpdater from "../state/multicall/updater";
-import { ConnectButton } from "../components/Connect";
 
 export enum ConnectorNames {
   Injected = "Connect With Metamask",

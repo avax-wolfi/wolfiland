@@ -22,6 +22,7 @@ import { BigNumber } from "ethers";
 import { calculateGasMargin } from "../../utils";
 import { useConnect } from "../../hooks/useConnect";
 import { connectorsByName } from "../../pages/_app";
+import Wallet from "../Wallet/Wallet";
 
 export interface ConnectWalletProps {}
 
@@ -99,6 +100,8 @@ export default React.memo<ConnectWalletProps>(function ConnectWallet() {
   const [feedback, setFeedback] = useState("");
   const [forceRefresh, setForceRefresh] = useState(0);
 
+  const [showWalletModal, setShowWalletModal] = useState(false);
+
   const [, setAttemptingMint] = useState<boolean>(false); // clicked mint
 
   const [, setLastMintHash] = useState<string>("");
@@ -143,8 +146,8 @@ export default React.memo<ConnectWalletProps>(function ConnectWallet() {
             }!`
           );
           setForceRefresh((current) => ++current);
-
           setLastMintHash(response.hash);
+          setShowWalletModal(true);
         });
       })
       .catch((error) => {
@@ -189,7 +192,14 @@ export default React.memo<ConnectWalletProps>(function ConnectWallet() {
   };
 
   return (
-    <div className={styles["container"]}>
+    <>
+     <Wallet
+        isModalVisible={showWalletModal}
+        handleOk={() => setShowWalletModal(false)}
+        handleCancel={() => setShowWalletModal(false)}
+        refresh={forceRefresh}
+      />
+     <div className={styles["container"]}>
       <div className={styles["logotype-desc"]}>
         <Image src={wolfiLand} alt="WolfiLand" />
         <Pad amt={20} row />
@@ -235,5 +245,6 @@ export default React.memo<ConnectWalletProps>(function ConnectWallet() {
       </div>
       <p className={styles["cost"]}>{feedback}</p>
     </div>
+    </>
   );
 });
