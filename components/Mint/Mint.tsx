@@ -153,10 +153,12 @@ export default React.memo<ConnectWalletProps>(function ConnectWallet() {
       .catch((error) => {
         setForceRefresh((current) => ++current);
         setAttemptingMint(false);
-        setFeedback("Something went wrong when attempting to mint");
         // we only care if the error is something _other_ than the user rejected the tx
         if (error?.code !== 4001) {
           console.error(error, ": ERROR");
+          setFeedback(error.data.message);
+        } else {
+          setFeedback("Something went wrong when attempting to mint")
         }
       });
 
@@ -243,7 +245,7 @@ export default React.memo<ConnectWalletProps>(function ConnectWallet() {
           <span>Connect a wallet to see more info.</span>
         )}
       </div>
-      <p className={styles["cost"]}>{feedback}</p>
+      <p className={styles["cost"]} style={{maxWidth: "28rem"}}>{feedback}</p>
     </div>
     </>
   );
