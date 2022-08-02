@@ -1,10 +1,10 @@
-import React from 'react'
-import Image from 'next/image'
-import mint from '../../public/icons/mint now 1.svg'
-import mintSm from '../../public/img/mint now 1-sm.svg'
-import wolfilandSm from '../../public/img/Logo-sm.svg'
-import styles from './Welcome.module.css'
-import Pad from '../Pad'
+import React from "react";
+import Image from "next/image";
+import mint from "../../public/icons/mint now 1.svg";
+import mintSm from "../../public/img/mint now 1-sm.svg";
+import wolfilandSm from "../../public/img/Logo-sm.svg";
+import styles from "./Welcome.module.css";
+import Pad from "../Pad";
 
 export interface WelcomeProps {}
 
@@ -24,11 +24,13 @@ export default React.memo<WelcomeProps>(function Welcome() {
         <div className={styles["right-box"]}>
           <div className={styles["img-div"]}>
             <div className={styles["mint-now"]}>
-              <Image src={mint} alt="Mint Now" />
+              <a href="#mint-section">
+                <Image src={mint} alt="Mint Now" />
+              </a>
             </div>
             <div className={styles["mint-now-sm"]}>
               <a href="#mint-section">
-                <Image src={mintSm} alt="Mint Now"/>
+                <Image src={mintSm} alt="Mint Now" />
               </a>
             </div>
           </div>

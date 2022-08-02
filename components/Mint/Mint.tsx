@@ -20,6 +20,8 @@ import {
 import { useTransactionAdder } from "../../state/transactions/hooks";
 import { BigNumber } from "ethers";
 import { calculateGasMargin } from "../../utils";
+import { useConnect } from "../../hooks/useConnect";
+import { connectorsByName } from "../../pages/_app";
 
 export interface ConnectWalletProps {}
 
@@ -72,6 +74,19 @@ const Balance = ({ forceRefresh }: { forceRefresh?: number }) => {
 };
 
 export default React.memo<ConnectWalletProps>(function ConnectWallet() {
+  const {
+    activate,
+    activatingConnector,
+    connector,
+    context,
+    error,
+    setActivatingConnector,
+    triedEager,
+  } = useConnect();
+  const currentConnector = connectorsByName["Connect With Metamask"];
+  const activating = currentConnector === activatingConnector;
+  const connected = currentConnector === connector;
+
   const [quantity, setQuantityToMint] = useState(1);
   const { chainId, account, library } = useWeb3React();
   const mintingContract = useMintingContract();
@@ -198,14 +213,25 @@ export default React.memo<ConnectWalletProps>(function ConnectWallet() {
       {account ? (
         <Image src={mintNow} alt="Mint" onClick={mint} />
       ) : (
-        <Image src={connectWallet} alt="Connect your Wallet" />
+        <Image
+          src={connectWallet}
+          alt="Connect your Wallet"
+          onClick={() => {
+            setActivatingConnector(currentConnector);
+            activate(connectorsByName["Connect With Metamask"]);
+          }}
+        />
       )}
       <Pad amt={20} />
       <div className={styles["cost"]}>
-        {account ? <>
-          <span>Actual Cost: {totalCost} AVAX</span>
-        <span>Total Minted: {formatUnits(totalSupply, "wei")} </span>
-        </> : <span>Connect a wallet to see more info.</span>}
+        {account ? (
+          <>
+            <span>Actual Cost: {totalCost} AVAX</span>
+            <span>Total Minted: {formatUnits(totalSupply, "wei")} </span>
+          </>
+        ) : (
+          <span>Connect a wallet to see more info.</span>
+        )}
       </div>
       <p className={styles["cost"]}>{feedback}</p>
     </div>
