@@ -27,7 +27,9 @@ export default React.memo<WelcomeProps>(function Welcome() {
               <Image src={mint} alt="Mint Now" />
             </div>
             <div className={styles["mint-now-sm"]}>
-              <Image src={mintSm} alt="Mint Now" />
+              <a href="#mint-section">
+                <Image src={mintSm} alt="Mint Now"/>
+              </a>
             </div>
           </div>
         </div>
