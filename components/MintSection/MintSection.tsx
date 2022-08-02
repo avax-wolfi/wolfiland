@@ -1,19 +1,19 @@
 import React from "react";
 import Image from "next/image";
 
-import ConnectWallet from "../ConnectWallet/ConnectWallet";
+import Mint from "../Mint/Mint";
 
 import mintWolfi from "../../public/img/mint 1.svg";
 
-import styles from "./WalletSection.module.css";
+import styles from "./MintSection.module.css";
 import Pad from "../Pad";
 
-export interface WalletSectionProps {}
+export interface MintSectionProps {}
 
-export default React.memo<WalletSectionProps>(function WalletSection() {
+export default React.memo<MintSectionProps>(function MintSection() {
   return (
     <div className={styles["container"]}>
-      <ConnectWallet />
+      <Mint />
       <Pad amt={30} row />
       <Image src={mintWolfi} alt="Spicy Wolfi" />
     </div>

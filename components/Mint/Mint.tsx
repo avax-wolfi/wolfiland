@@ -8,7 +8,7 @@ import mintNow from "../../public/icons/mint now 1.png";
 
 import wolfiLand from "../../public/icons/logo big 1.svg";
 
-import styles from "./ConnectWallet.module.css";
+import styles from "./Mint.module.css";
 import Pad from "../Pad";
 import { useWeb3React } from "@web3-react/core";
 import { formatEther, formatUnits, parseEther } from "@ethersproject/units";
@@ -202,8 +202,10 @@ export default React.memo<ConnectWalletProps>(function ConnectWallet() {
       )}
       <Pad amt={20} />
       <div className={styles["cost"]}>
-        <span>Actual Cost: {totalCost} AVAX</span>
+        {account ? <>
+          <span>Actual Cost: {totalCost} AVAX</span>
         <span>Total Minted: {formatUnits(totalSupply, "wei")} </span>
+        </> : <span>Connect a wallet to see more info.</span>}
       </div>
       <p className={styles["cost"]}>{feedback}</p>
     </div>

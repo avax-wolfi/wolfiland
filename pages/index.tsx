@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Background from '../components/Background/Background'
 import Footer from '../components/Footer/Footer'
 import Header from '../components/Header/Header'
-import WalletSection from '../components/WalletSection/WalletSection'
+import WalletSection from '../components/MintSection/MintSection'
 import Welcome from '../components/Welcome/Welcome'
 
 
