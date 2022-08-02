@@ -1,10 +1,10 @@
-import React from "react";
-import Image from "next/image";
-import mint from "../../public/icons/mint now 1.png";
-import mintSm from "../../public/img/mint now 1-sm.svg";
-import wolfilandSm from "../../public/img/Logo-sm.svg";
-import styles from "./Welcome.module.css";
-import Pad from "../Pad";
+import React from 'react'
+import Image from 'next/image'
+import mint from '../../public/icons/mint now 1.svg'
+import mintSm from '../../public/img/mint now 1-sm.svg'
+import wolfilandSm from '../../public/img/Logo-sm.svg'
+import styles from './Welcome.module.css'
+import Pad from '../Pad'
 
 export interface WelcomeProps {}
 

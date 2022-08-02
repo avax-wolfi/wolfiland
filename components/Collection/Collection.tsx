@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import magentaWaves from "../../public/img/waves.svg";
+import magentaWaves from "../../public/img/wavesResize.svg";
 import wolfiCollection from "../../public/img/wolfi-collection.svg";
-import wolfi from "../../public/img/about 1.svg";
+import wolfi from "../../public/img/aboutDefinitive.svg";
 import group1 from "../../public/img/Group 1.png";
 import group2 from "../../public/img/Group 2.png";
 import group3 from "../../public/img/Group 3.png";
@@ -18,16 +18,19 @@ export interface CollectionProps {}
 export default React.memo<CollectionProps>(function Collection() {
   return (
     <div className={styles["container"]}>
-      <Image className={styles["top-waves"]} src={magentaWaves} alt="" />
-
+    
+    <div className={styles["top-waves"]}><Image  src={magentaWaves} alt="" /></div>
       <div className={styles["magenta"]}>
+       
+      
         <Pad amt={100} />
         <div className={styles["wolfi-collection"]}>
           <div className={styles["desc-collection"]}>
-            <Image src={wolfiCollection} alt="Wolfi" />
+          
+          <div className={styles['wolfi-collection-img']}> <Image src={wolfiCollection} alt="Wolfi" /></div>
             <Pad amt={60} />
             <div className={styles["wolfi-sm"]}>
-            <Image src={wolfiSm} alt="Wolfi" />
+            <Image src={wolfiSm} alt="Wolfi" width={320} />
           </div>
             <p>
               This collection works as a fund to support me as an artist. If you
@@ -42,7 +45,8 @@ export default React.memo<CollectionProps>(function Collection() {
           </div>
           <Pad amt={70} row />
           <div className={styles["wolfi"]}>
-          <Image src={wolfi} alt="Wolfi" />
+          
+          <div className={styles['wolfi-lg']}> <Image src={wolfi} alt="Wolfi" /></div>
 
           </div>
 
@@ -93,8 +97,9 @@ export default React.memo<CollectionProps>(function Collection() {
           </div>
           <Pad amt={30} />
         </div>
+     
       </div>
-      <Image className={styles["down-waves"]} src={magentaWaves} alt="" />
+     <div className={styles["down-waves"]}><Image  src={magentaWaves} alt="" /></div> 
     </div>
   );
 });

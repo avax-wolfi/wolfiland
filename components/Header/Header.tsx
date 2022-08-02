@@ -42,13 +42,15 @@ export function ConnectButton() {
       }}
     >
       <div className={styles["connect-btn-text-container-box"]}>
-        <Image src={viewWallet} />
         <div className={styles["connect-btn-text"]}>
-          {activating
-            ? "CONNECTING"
-            : connected
-            ? "CONNECTED"
-            : <Image src={connectWalletIcon} />}
+          {activating ? (
+            "CONNECTING"
+          ) : connected ? (
+            <Image src={viewWallet} />
+          ) : (
+            
+            <Image src={connectWalletIcon} />
+          )}
         </div>
       </div>
     </button>
@@ -60,8 +62,7 @@ export default React.memo<HeaderProps>(function Header() {
     <header className={styles["container"]}>
       <nav className={styles["nav"]}>
         {/* MENU ICON */}
-        <div className={styles['nav-icon']}>
-         
+        <div className={styles["nav-icon"]}>
           <Image
             className="navbar-brand navbar-toggler"
             src={barLogo}
