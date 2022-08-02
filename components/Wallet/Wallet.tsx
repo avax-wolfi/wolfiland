@@ -9,7 +9,7 @@ export interface WalletProps {
   isModalVisible?: boolean;
   handleOk: () => void;
   handleCancel: () => void;
-  refresh: any;
+  refresh?: any;
 }
 
 export default React.memo<WalletProps>(function Wallet({
