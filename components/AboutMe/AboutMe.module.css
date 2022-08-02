@@ -39,7 +39,7 @@
 }
 
 .frame-sm {
-  width: 240px;
+  width: 280px;
   display: flex;
   border: 8px solid #ffe154;
   justify-content: center;
@@ -68,13 +68,9 @@
 }
 
 @media (min-width: 620px) {
-  .frame-sm {
-    display: none !important;
-  }
+ 
 
-  .frame {
-    display: block !important;
-  }
+ 
 
   .rectangle {
     width: 500px;
@@ -103,6 +99,14 @@
     width: 550px;
     text-align: left;
     margin-left: 50px;
+  }
+
+  .frame-sm {
+    display: none !important;
+  }
+
+  .frame {
+    display: unset !important;
   }
 
   .rectangle {
@@ -134,9 +138,7 @@
     width: 1024px;
   }
 
-  .frame {
-    margin-right: 50px;
-  }
+
   .about-me-text {
     width: 658px;
   }

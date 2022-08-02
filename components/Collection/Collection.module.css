@@ -13,10 +13,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-top: 2px solid #ec408b !important;
-  border-bottom: 2px solid #ec408b !important;
-  margin-top: -1px !important;
-  margin-bottom: -1px !important;
+
+  /*margin-top: -1px !important; 
+  margin-bottom: -1px !important; */
 }
 
 .wolfi-collection {
@@ -33,10 +32,19 @@
   width: 100%;
 }
 
-.wolfi-sm{
+.wolfi-sm {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.wolfi-lg{
+    width: 380px;
+}
+
+.wolfi-collection-img{
    display: flex;
    justify-content: center;
-   margin-bottom: 30px;
 }
 
 .wolfi {
@@ -86,22 +94,30 @@
   height: 140px;
 }
 
+/* .top-waves {
+ 
+} */
+
 .top-waves {
-  margin-bottom: -1px !important;
+  width: 100%;
+  display: flex;
+  margin-bottom: -2px;
 }
 
 .down-waves {
   transform: rotate(-180deg);
-  border-bottom: -1px solid #ec408b !important;
+  margin-top: -2px;
+  width: 100%;
+  display: flex;
 }
 
 @media (min-width: 990px) {
   .wolfi-collection {
     flex-direction: row;
     width: 90%;
-
   }
 
+ 
   .wolfi {
     display: flex !important;
     justify-content: center !important;
@@ -109,7 +125,6 @@
 
   .wolfi-sm {
     display: none !important;
-
   }
 
   .desc-collection p {

@@ -104,7 +104,11 @@
   }
 
   .mint-now{
-     display: unset;
+     display: flex;
+     justify-content: center;
+     margin-bottom: 50px;
+     margin-left: 50px;
+
   }
 
   .left-box {
@@ -112,6 +116,7 @@
     background-image: url("../../public/icons/Welcome 1.svg");
     background-repeat: no-repeat;
     background-position: center center;
+    
   }
 
   .right-box {

@@ -46,7 +46,7 @@
   }
   
   .social-links {
-    width: 400px;
+    width: 300px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -63,18 +63,19 @@
   }
 
   .connect-btn{
-    background: #492F7A;
+    background: transparent;
     border: none;
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
     padding-top: 2rem;
     padding-bottom: .5rem;
+    margin-top: 20px;
   }
 
   .connect-btn-text-container-box {
     display: flex;
-    padding: 0.1rem;
-    border: 1px solid #FFE154;
+   
+   
     border-radius: .5rem;
     color: white;
   }
@@ -82,7 +83,10 @@
   .connect-btn-text {
     max-width: 6rem;
     word-break: break-word;
-    margin-left: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
     
   }
   

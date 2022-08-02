@@ -86,8 +86,8 @@ export default React.memo<AboutMeProps>(function AboutMe() {
       <Pad amt={50} />
       <VideoJS options={videoJsOptions} onReady={handlePlayerReady} themeName={'city'}  />
       <Pad amt={25} />
-      <a href={'#'} style={{color:'white'}}>Download the original proocreate file to verify aunthenticity</a>
-      <Pad amt={150} />
+      <a href={'#'} style={{color:'white',textAlign:'center'}}>Download the original proocreate file to verify aunthenticity</a>
+      <Pad amt={30} />
       <div className={styles['separator']}>
       <Image src={separator} />
       </div>
