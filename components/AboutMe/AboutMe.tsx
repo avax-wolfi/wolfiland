@@ -94,10 +94,10 @@ export default React.memo<AboutMeProps>(function AboutMe() {
       <Pad amt={25} />
       <a
         href={"/Files/wolfie.procreate"}
-        style={{ color: "white", textAlign: "center" }}
+        style={{ color: "white", textAlign: "center",textDecoration:'underline' }}
         download="wolfie.procreate"
       >
-        Download the original proocreate file to verify aunthenticity
+        Download the original procreate file to verify aunthenticity
       </a>
       <Pad amt={30} />
       <div className={styles["separator"]}>
