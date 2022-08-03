@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 
 import barLogo from "../../public/icons/menu logo 1.png";
-import discord from "../../public/icons/discord 1.svg";
+import  telegram from "../../public/icons/telegram.svg";
 import twitter from "../../public/icons/twitter 1.svg";
 import connectWallet from "../../public/icons/connect wallet.svg";
 import viewWallet from "../../public/img/connect-2.svg";
@@ -98,7 +98,7 @@ export default React.memo<HeaderProps>(function Header() {
             className="d-flex justify-content-center me-2 mt-3 mb-3 mb-lg-0 mt-md-0"
             href="#"
           >
-            <Image src={discord} alt="Discord" />
+            <Image src={telegram} alt="Telegram" />
           </a>
           <a
             className="d-flex justify-content-center me-2 mb-3 mb-lg-0 mt-md-0"
