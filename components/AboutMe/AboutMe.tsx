@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 import { videoJs as VideoJS } from "../VideoJs/VideoJS";
-import videojs, { VideoJsPlayerOptions } from 'video.js'
+import videojs, { VideoJsPlayerOptions } from "video.js";
 
 import tv from "../../public/icons/Group.svg";
 import mari from "../../public/img/mari.png";
@@ -15,32 +15,33 @@ import Link from "next/link";
 export interface AboutMeProps {}
 
 export default React.memo<AboutMeProps>(function AboutMe() {
-
   const playerRef = React.useRef(null);
 
-  const videoJsOptions:VideoJsPlayerOptions = {
+  const videoJsOptions: VideoJsPlayerOptions = {
     autoplay: true,
     controls: true,
     responsive: true,
-    bigPlayButton:true,
-    controlBar:false,
+    bigPlayButton: true,
+    controlBar: false,
     fluid: true,
-    sources: [{
-      src: require('../../public/videos/CreationVideoV2.mp4'),
-      type: 'video/mp4'
-    }]
+    sources: [
+      {
+        src: require("../../public/videos/CreationVideoV2.mp4"),
+        type: "video/mp4",
+      },
+    ],
   };
 
   const handlePlayerReady = (player) => {
     playerRef.current = player;
-   
+
     // You can handle player events here, for example:
-    player.on('waiting', () => {
-      videojs.log('player is waiting');
+    player.on("waiting", () => {
+      videojs.log("player is waiting");
     });
 
-    player.on('dispose', () => {
-      videojs.log('player will dispose');
+    player.on("dispose", () => {
+      videojs.log("player will dispose");
     });
   };
 
@@ -66,10 +67,6 @@ export default React.memo<AboutMeProps>(function AboutMe() {
           to create the first official wolfi collection, which mainly works as a
           fund to support me as an artist.
         </p>
-        
-       
-         
-
 
         <p className={styles["about-me-text-2"]}>
           I designed wolfi in 2020, with the expectations to create a caricature
@@ -78,18 +75,33 @@ export default React.memo<AboutMeProps>(function AboutMe() {
           modifications to make it unique.
         </p>
       </div>
-    
-    
+
       {/* <video  className={styles['rectangle-xl']} src={require('../../public/videos/CreationVideoV2.mp4')}    ></video> */}
-     
-    
+
       <Pad amt={50} />
-      <VideoJS options={videoJsOptions} onReady={handlePlayerReady} themeName={'city'}  />
+      <VideoJS
+        options={videoJsOptions}
+        onReady={handlePlayerReady}
+        themeName={"city"}
+      />
+      <Pad amt={20} />
+      <p className={styles['text-about']}>
+        "I designed wolfi in 2020, with the expectations to create a caricature
+        similar to apu the frog. I used as reference “Landwolf”, other character
+        from the popular comic “Boy’s club”, but with a couple modifications to
+        make it unique.""
+      </p>
       <Pad amt={25} />
-      <a href={'#'} style={{color:'white',textAlign:'center'}}>Download the original proocreate file to verify aunthenticity</a>
+      <a
+        href={"/Files/wolfie.procreate"}
+        style={{ color: "white", textAlign: "center" }}
+        download="wolfie.procreate"
+      >
+        Download the original proocreate file to verify aunthenticity
+      </a>
       <Pad amt={30} />
-      <div className={styles['separator']}>
-      <Image src={separator} />
+      <div className={styles["separator"]}>
+        <Image src={separator} />
       </div>
     </main>
   );

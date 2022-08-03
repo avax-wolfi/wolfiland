@@ -7,6 +7,7 @@ export default function Document() {
 
   {/* Primary Meta Tags */}
   <title>Wolfi Land</title>
+  <link rel="shortcut icon" href="/icons/favicon.png" />
   <meta name="title" content="Wolfi Land" />
   <meta name="description" content="Welcome to the first official NFT collection of Wolfi! The most popular mascot of Avalanche (AVAX). Enter now and mint your own Wolfi!" />
   {/* Open Graph / Facebook */}
