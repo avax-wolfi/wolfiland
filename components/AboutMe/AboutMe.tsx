@@ -84,12 +84,12 @@ export default React.memo<AboutMeProps>(function AboutMe() {
         onReady={handlePlayerReady}
         themeName={"city"}
       />
-      <Pad amt={20} />
+      <Pad amt={50} />
       <p className={styles['text-about']}>
-        "I designed wolfi in 2020, with the expectations to create a caricature
+        I designed wolfi in 2020, with the expectations to create a caricature
         similar to apu the frog. I used as reference “Landwolf”, other character
         from the popular comic “Boy’s club”, but with a couple modifications to
-        make it unique.""
+        make it unique.
       </p>
       <Pad amt={25} />
       <a
