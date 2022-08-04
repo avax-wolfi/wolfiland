@@ -61,7 +61,7 @@ export default React.memo<AboutMeProps>(function AboutMe() {
         </div>
         <p className={styles["about-me-text"]}>
           I am Mar, the creator of Wolfi, the most popular mascot among the
-          Avalanche community. I’ve been actively working on different projects,
+          Avalanche community. I've been actively working on different projects,
           but currently, I am a freelancer designer. I created Wolfi after a
           group of friends that loved AVAX asked me to do it. So today, I
           decided to make the first Official Wolfi Collection, where users will

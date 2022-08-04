@@ -35,7 +35,7 @@ export default React.memo<CollectionProps>(function Collection() {
             </div>
             <p>
               This fun and exclusive NFT collection will allow you to mint one
-              customized art piece of Wolfi. Only 6,000 mints will be available,
+              customized art piece of Wolfi. Only 5,000 mints will be available,
               so don't waste your chance to grab one of these; it is cheap
               anyways! The cost is $20 US dollars per Wolfi (worth $AVAX), fixed
               at that rate, no matter the price fluctuations. So get ready to
