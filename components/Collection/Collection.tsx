@@ -17,7 +17,7 @@ export interface CollectionProps {}
 
 export default React.memo<CollectionProps>(function Collection() {
   return (
-    <div className={styles["container"]}>
+    <div className={styles["container"]} id='collection'>
     
     <div className={styles["top-waves"]}><Image  src={magentaWaves} alt="" /></div>
       <div className={styles["magenta"]}>
@@ -32,7 +32,7 @@ export default React.memo<CollectionProps>(function Collection() {
             <div className={styles["wolfi-sm"]}>
             <Image src={wolfiSm} alt="Wolfi" width={320} />
           </div>
-            <p>
+            <p >
               This collection works as a fund to support me as an artist. If you
               use wolfi daily for your memes or posts, a mint from this
               collection will be appreciated. I don’t intend for this project to

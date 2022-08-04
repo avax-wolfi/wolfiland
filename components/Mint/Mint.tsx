@@ -244,8 +244,9 @@ export default React.memo<ConnectWalletProps>(function ConnectWallet() {
         ) : (
           <span>Connect a wallet to see more info.</span>
         )}
+       <p className={`${styles["cost"]} ${styles["feedback"]}`}>{feedback}</p> 
       </div>
-      <p className={`${styles["cost"]} ${styles["feedback"]}`}>{feedback}</p>
+    
     </div>
     </>
   );

@@ -12,7 +12,7 @@ export interface MintSectionProps {}
 
 export default React.memo<MintSectionProps>(function MintSection() {
   return (
-    <div className={styles["container"]} id="mint-section">
+    <div className={styles["container"]} id="mint">
       <Mint />
       <Pad amt={30} row />
       <Image src={mintWolfi} alt="Spicy Wolfi" />

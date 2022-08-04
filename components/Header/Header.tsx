@@ -75,7 +75,7 @@ export default React.memo<HeaderProps>(function Header() {
         {/* MENU ICON */}
         <div className={styles["nav-icon"]}>
           <Image
-            className="navbar-brand navbar-toggler"
+           
             src={barLogo}
             alt="Menu"
           />
@@ -83,11 +83,11 @@ export default React.memo<HeaderProps>(function Header() {
 
         {/* OPTIONS LINKS */}
         <div className={styles["nav-options"]}>
-          <a href="#">story</a>
-          <a className="nav-link text-white text-uppercase" href="#">
+          <a href="#story">story</a>
+          <a href="#collection">
             collection
           </a>
-          <a className="nav-link text-white text-uppercase" href="#">
+          <a  href="#mint">
             mint
           </a>
         </div>

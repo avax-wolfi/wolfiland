@@ -11,7 +11,7 @@
     justify-content: center;
     position: relative;
     font-family: 'Fjalla One', sans-serif;
-    
+    margin-bottom: -1px;
   }
   
   .nav {

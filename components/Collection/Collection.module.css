@@ -25,6 +25,7 @@
   width: 100%;
 }
 
+
 .desc-collection {
   display: flex;
   flex-direction: column;
@@ -59,6 +60,7 @@
   align-self: center;
   font-family: "Inter", sans-serif;
   margin-bottom: 40px;
+  font-size: 16px;
 }
 
 .wolfi-benefits {
@@ -84,7 +86,7 @@
   border-radius: 27px;
   margin-bottom: 20px;
   font-family: "Inter", sans-serif;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
 }
 
 .card p {
@@ -92,6 +94,7 @@
   margin: 0;
   text-align: center;
   height: 140px;
+  font-size: 15px;
 }
 
 /* .top-waves {
