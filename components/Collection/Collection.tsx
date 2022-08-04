@@ -17,40 +17,39 @@ export interface CollectionProps {}
 
 export default React.memo<CollectionProps>(function Collection() {
   return (
-    <div className={styles["container"]} id='collection'>
-    
-    <div className={styles["top-waves"]}><Image  src={magentaWaves} alt="" /></div>
+    <div className={styles["container"]} id="collection">
+      <div className={styles["top-waves"]}>
+        <Image src={magentaWaves} alt="" />
+      </div>
       <div className={styles["magenta"]}>
-       
-      
         <Pad amt={100} />
         <div className={styles["wolfi-collection"]}>
           <div className={styles["desc-collection"]}>
-          
-          <div className={styles['wolfi-collection-img']}> <Image src={wolfiCollection} alt="Wolfi" /></div>
+            <div className={styles["wolfi-collection-img"]}>
+              {" "}
+              <Image src={wolfiCollection} alt="Wolfi" />
+            </div>
             <Pad amt={60} />
             <div className={styles["wolfi-sm"]}>
-            <Image src={wolfiSm} alt="Wolfi" width={320} />
-          </div>
-            <p >
-              This collection works as a fund to support me as an artist. If you
-              use wolfi daily for your memes or posts, a mint from this
-              collection will be appreciated. I don’t intend for this project to
-              become a financial investment, so if you expect that, please
-              re-consider minting (it is cheap anyway!). There’s a total of
-              6,000 wolfis accessible for minting, costing $20 US dollars each
-              in AVAX. The contract is programmed so we can adjust the AVAX
-              price to $20 US dollars in case of massive price fluctuations.
+              <Image src={wolfiSm} alt="Wolfi" width={320} />
+            </div>
+            <p>
+              This collection will allow you to mint a special and unique NFT
+              collectible of Wolfi. I don’t intend for this project to become a
+              financial investment, so if you expect that, please re-consider
+              minting (it is cheap anyway!). There are 6,000 Wolfis accessible
+              for minting, costing $20 US dollars each in AVAX. The contract is
+              programmed so we can adjust the AVAX price to $20 US dollars in
+              case of massive price fluctuations.
             </p>
           </div>
           <Pad amt={70} row />
           <div className={styles["wolfi"]}>
-          
-          <div className={styles['wolfi-lg']}> <Image src={wolfi} alt="Wolfi" /></div>
-
+            <div className={styles["wolfi-lg"]}>
+              {" "}
+              <Image src={wolfi} alt="Wolfi" />
+            </div>
           </div>
-
-        
         </div>
         <Pad amt={100} />
         <div className={styles["wolfi-benefits"]}>
@@ -63,7 +62,7 @@ export default React.memo<CollectionProps>(function Collection() {
               </div>
 
               <p>
-                You'll be part of the official wolfi collection list of
+                You will be part of the official Wolfi collection list of
                 addresses that 3rd party projects can use to deploy airdrops and
                 many other things.
               </p>
@@ -75,8 +74,8 @@ export default React.memo<CollectionProps>(function Collection() {
 
               <p>
                 We grant all copyright rights to the user for their mint(s).
-                This particular point doesn't include base wolfi; It is only
-                granted for the minted wolfi with the specific clothing and hair
+                This particular point doesn't include base Wolfi; It is only
+                granted for the minted Wolfi with the specific clothing and hair
                 color you generate.
               </p>
             </div>
@@ -97,9 +96,10 @@ export default React.memo<CollectionProps>(function Collection() {
           </div>
           <Pad amt={30} />
         </div>
-     
       </div>
-     <div className={styles["down-waves"]}><Image  src={magentaWaves} alt="" /></div> 
+      <div className={styles["down-waves"]}>
+        <Image src={magentaWaves} alt="" />
+      </div>
     </div>
   );
 });

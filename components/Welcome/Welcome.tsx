@@ -24,12 +24,12 @@ export default React.memo<WelcomeProps>(function Welcome() {
         <div className={styles["right-box"]}>
           <div className={styles["img-div"]}>
             <div className={styles["mint-now"]}>
-              <a href="#mint-section">
+              <a href="#mint">
                 <Image src={mint} alt="Mint Now" />
               </a>
             </div>
             <div className={styles["mint-now-sm"]}>
-              <a href="#mint-section">
+              <a href="#mint">
                 <Image src={mintSm} alt="Mint Now" />
               </a>
             </div>

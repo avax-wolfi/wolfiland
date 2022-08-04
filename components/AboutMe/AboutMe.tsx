@@ -47,7 +47,7 @@ export default React.memo<AboutMeProps>(function AboutMe() {
 
   return (
     <main className={styles["container"]}>
-      <div className={styles["header"]} id='story'>
+      <div className={styles["header"]} id="story">
         <Image src={storyLogo} alt="The Story behind Wolfi" />
       </div>
       <div className={styles["about-me"]}>
@@ -60,12 +60,13 @@ export default React.memo<AboutMeProps>(function AboutMe() {
           <Image src={mari} />
         </div>
         <p className={styles["about-me-text"]}>
-          I am Mar, the creator of wolfi, the most popular mascot among the
-          Avalanche community. I’ve been active working on different projects,
-          but currently, I am a freelancer designer. I created wolfi after a
-          group of friends that loved AVAX asked me to do it. Today, I decided
-          to create the first official wolfi collection, which mainly works as a
-          fund to support me as an artist.
+          I am Mar, the creator of Wolfi, the most popular mascot among the
+          Avalanche community. I’ve been actively working on different projects,
+          but currently, I am a freelancer designer. I created Wolfi after a
+          group of friends that loved AVAX asked me to do it. So today, I
+          decided to make the first Official Wolfi Collection, where users will
+          be able to mint different versions of this cute little guy. The
+          project also works as a way to support me as an artist
         </p>
 
         <p className={styles["about-me-text-2"]}>
@@ -85,16 +86,20 @@ export default React.memo<AboutMeProps>(function AboutMe() {
         themeName={"city"}
       />
       <Pad amt={50} />
-      <p className={styles['text-about']}>
-        I designed wolfi in 2020, with the expectations to create a caricature
-        similar to apu the frog. I used as reference “Landwolf”, other character
-        from the popular comic “Boy’s club”, but with a couple modifications to
-        make it unique.
+      <p className={styles["text-about"]}>
+        I designed Wolfi in 2020 with the expectation of creating a caricature
+        similar to Apu the frog. I used as reference “Landwolf”, another
+        character from the popular comic “Boy’s club,” but with a couple of
+        modifications to make it unique
       </p>
       <Pad amt={25} />
       <a
         href={"/Files/wolfie.procreate"}
-        style={{ color: "white", textAlign: "center",textDecoration:'underline' }}
+        style={{
+          color: "white",
+          textAlign: "center",
+          textDecoration: "underline",
+        }}
         download="wolfie.procreate"
       >
         Download the original procreate file to verify aunthenticity
