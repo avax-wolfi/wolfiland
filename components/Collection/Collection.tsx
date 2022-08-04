@@ -34,13 +34,13 @@ export default React.memo<CollectionProps>(function Collection() {
               <Image src={wolfiSm} alt="Wolfi" width={320} />
             </div>
             <p>
-              This collection will allow you to mint a special and unique NFT
-              collectible of Wolfi. I don’t intend for this project to become a
-              financial investment, so if you expect that, please re-consider
-              minting (it is cheap anyway!). There are 6,000 Wolfis accessible
-              for minting, costing $20 US dollars each in AVAX. The contract is
-              programmed so we can adjust the AVAX price to $20 US dollars in
-              case of massive price fluctuations.
+              This fun and exclusive NFT collection will allow you to mint one
+              customized art piece of Wolfi. Only 6,000 mints will be available,
+              so don't waste your chance to grab one of these; it is cheap
+              anyways! The cost is $20 US dollars per Wolfi (worth $AVAX), fixed
+              at that rate, no matter the price fluctuations. So get ready to
+              join the fun and mint your exclusive Wolfi now, don't let it
+              slide!
             </p>
           </div>
           <Pad amt={70} row />
@@ -62,9 +62,10 @@ export default React.memo<CollectionProps>(function Collection() {
               </div>
 
               <p>
-                You will be part of the official Wolfi collection list of
-                addresses that 3rd party projects can use to deploy airdrops and
-                many other things.
+                Aside from holding a collectible piece of this emblematic
+                mascot, you will be part of the official Wolfi collection list
+                of addresses that 3rd party projects can use to deploy airdrops
+                and many other things.
               </p>
             </div>
             <div className={styles["card"]}>
@@ -91,7 +92,7 @@ export default React.memo<CollectionProps>(function Collection() {
                 <Image src={group4} alt="IV" />
               </div>
 
-              <p>A exclusive digital artbook of wolfi (TBA).</p>
+              <p>An exclusive digital artbook of wolfi (TBA).</p>
             </div>
           </div>
           <Pad amt={30} />

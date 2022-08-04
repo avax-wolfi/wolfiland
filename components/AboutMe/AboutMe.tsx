@@ -66,10 +66,8 @@ export default React.memo<AboutMeProps>(function AboutMe() {
           group of friends that loved AVAX asked me to do it. So today, I
           decided to make the first Official Wolfi Collection, where users will
           be able to mint different versions of this cute little guy. The
-          project also works as a way to support me as an artist
+          project also works as a way to support me as an artist!
         </p>
-
-      
       </div>
 
       {/* <video  className={styles['rectangle-xl']} src={require('../../public/videos/CreationVideoV2.mp4')}    ></video> */}
@@ -82,10 +80,10 @@ export default React.memo<AboutMeProps>(function AboutMe() {
       />
       <Pad amt={50} />
       <p className={styles["text-about"]}>
-        I designed Wolfi in 2020 with the expectation of creating a caricature
+        I designed Wolfi in 2020 with the expectation of creating a cartoon
         similar to Apu the frog. I used as reference “Landwolf”, another
         character from the popular comic “Boy’s club,” but with a couple of
-        modifications to make it unique
+        modifications to make it unique.
       </p>
       <Pad amt={25} />
       <a
