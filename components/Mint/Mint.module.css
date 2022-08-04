@@ -1,3 +1,12 @@
+.no-borders {
+  border: none;
+}
+
+.fjalla-md {
+  font-family: 'Fjalla One', sans-serif;
+  font-size: medium;
+}
+
 /* Chrome, Safari, Edge, Opera */
 .hide-arrows::-webkit-outer-spin-button,
 .hide-arrows::-webkit-inner-spin-button {
@@ -49,7 +58,7 @@
 
   color: white;
   padding-top: 12px;
-  border-top: 2px solid black;
+  border-top: 2px solid #ec408b;
 }
 
 .feedback {

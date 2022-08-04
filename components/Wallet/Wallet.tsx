@@ -38,10 +38,11 @@ export default React.memo<WalletProps>(function Wallet({
       visible={isModalVisible}
       onOk={handleOk}
       onCancel={handleCancel}
+      cancelButtonProps={{hidden: true}}
     >
       {loading ? (
         <p>Getting your token URIs...</p>
-      ) : (
+      ) : elements.length ? (
         <>
           <div className={styles["wolfi-card-container"]}>
             {paginatedWolfies.map((wolfi, index) => (
@@ -61,7 +62,7 @@ export default React.memo<WalletProps>(function Wallet({
             onChange={handlePageChange}
           />
         </>
-      )}
+      ) : "You don't have a Wolfi yet. Await for launch and get a Wolfi!"}
     </Modal>
   );
 });

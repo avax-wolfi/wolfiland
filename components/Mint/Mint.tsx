@@ -5,6 +5,7 @@ import max from "../../public/img/max.svg";
 import min from "../../public/img/min.svg";
 import connectWallet from "../../public/img/connect-wallet.svg";
 import mintNow from "../../public/icons/mint now 1.png";
+import launchingSoon from "../../public/icons/launching-soon.png";
 
 import wolfiLand from "../../public/icons/logo big 1.svg";
 
@@ -114,53 +115,53 @@ export default React.memo<ConnectWalletProps>(function ConnectWallet() {
   const mint = async () => {
     if (!chainId || !library || !account) return;
 
-    let estimate,
-      method: (...args: any) => Promise<TransactionResponse>,
-      args: Array<string | string[] | number>,
-      value: BigNumber | null;
-    estimate = mintingContract.estimateGas.mint;
-    method = mintingContract.mint;
-    args = [quantity.toString()];
-    value = BigNumber.from(parseEther((+cost * quantity).toString()));
+    // let estimate,
+    //   method: (...args: any) => Promise<TransactionResponse>,
+    //   args: Array<string | string[] | number>,
+    //   value: BigNumber | null;
+    // estimate = mintingContract.estimateGas.mint;
+    // method = mintingContract.mint;
+    // args = [quantity.toString()];
+    // value = BigNumber.from(parseEther((+cost * quantity).toString()));
 
-    setAttemptingMint(true);
-    setFeedback("Minting your NFTs...");
-    await estimate(...args, value ? { value } : {})
-      .then((estimatedGasLimit) => {
-        return method(...args, {
-          ...(value ? { value } : {}),
-          gasLimit: calculateGasMargin(estimatedGasLimit),
-        }).then(async (response) => {
-          addTransaction(response, {
-            summary: `Mint ${quantity} Wolfi ${
-              quantity > 1 ? "Tokens" : "Token"
-            }`,
-          });
+    // setAttemptingMint(true);
+    // setFeedback("Minting your NFTs...");
+    // await estimate(...args, value ? { value } : {})
+    //   .then((estimatedGasLimit) => {
+    //     return method(...args, {
+    //       ...(value ? { value } : {}),
+    //       gasLimit: calculateGasMargin(estimatedGasLimit),
+    //     }).then(async (response) => {
+    //       addTransaction(response, {
+    //         summary: `Mint ${quantity} Wolfi ${
+    //           quantity > 1 ? "Tokens" : "Token"
+    //         }`,
+    //       });
 
-          await response.wait();
+    //       await response.wait();
 
-          setAttemptingMint(false);
-          setFeedback(
-            `Nice, You just minted ${quantity} ${
-              quantity > 1 ? "NFTs" : "NFT"
-            }!`
-          );
-          setForceRefresh((current) => ++current);
-          setLastMintHash(response.hash);
-          setShowWalletModal(true);
-        });
-      })
-      .catch((error) => {
-        setForceRefresh((current) => ++current);
-        setAttemptingMint(false);
-        // we only care if the error is something _other_ than the user rejected the tx
-        if (error?.code !== 4001) {
-          console.error(error, ": ERROR");
-          setFeedback(error.data.message);
-        } else {
-          setFeedback("Something went wrong when attempting to mint")
-        }
-      });
+    //       setAttemptingMint(false);
+    //       setFeedback(
+    //         `Nice, You just minted ${quantity} ${
+    //           quantity > 1 ? "NFTs" : "NFT"
+    //         }!`
+    //       );
+    //       setForceRefresh((current) => ++current);
+    //       setLastMintHash(response.hash);
+    //       setShowWalletModal(true);
+    //     });
+    //   })
+    //   .catch((error) => {
+    //     setForceRefresh((current) => ++current);
+    //     setAttemptingMint(false);
+    //     // we only care if the error is something _other_ than the user rejected the tx
+    //     if (error?.code !== 4001) {
+    //       console.error(error, ": ERROR");
+    //       setFeedback(error.data.message);
+    //     } else {
+    //       setFeedback("Something went wrong when attempting to mint")
+    //     }
+    //   });
 
     getData();
   };
@@ -216,14 +217,15 @@ export default React.memo<ConnectWalletProps>(function ConnectWallet() {
           id="quantity"
           value={quantity}
           step="1"
-          className={styles["hide-arrows"]}
+          className={`${styles["hide-arrows"]} ${styles["no-borders"]} ${styles["fjalla-md"]}`}
           onChange={handleChangeQuantity}
         />
         <Image src={min} alt="-" onClick={handleSubstractQuantity} />
       </div>
       <Pad amt={40} />
       {account ? (
-        <Image src={mintNow} alt="Mint" onClick={mint} />
+        // <Image src={mintNow} alt="Mint" onClick={mint} />
+        <Image src={launchingSoon} alt="Launching Soon!" />
       ) : (
         <Image
           src={connectWallet}
@@ -238,7 +240,7 @@ export default React.memo<ConnectWalletProps>(function ConnectWallet() {
       <div className={styles["cost"]}>
         {account ? (
           <>
-            <span>Actual Cost: {totalCost} AVAX</span>
+            <span>Actual Cost: {(+totalCost).toFixed(4)} AVAX</span>
             <span>Total Minted: {formatUnits(totalSupply, "wei")} </span>
           </>
         ) : (
