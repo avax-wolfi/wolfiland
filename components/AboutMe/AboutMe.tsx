@@ -82,7 +82,7 @@ export default React.memo<AboutMeProps>(function AboutMe() {
       <p className={styles["text-about"]}>
         I designed Wolfi in 2020 with the expectation of creating a cartoon
         similar to Apu the frog. I used as reference “Landwolf”, another
-        character from the popular comic “Boy’s club,” but with a couple of
+        character from the popular comic “Boy's club,” but with a couple of
         modifications to make it unique.
       </p>
       <Pad amt={25} />
