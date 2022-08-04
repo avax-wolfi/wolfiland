@@ -69,12 +69,7 @@ export default React.memo<AboutMeProps>(function AboutMe() {
           project also works as a way to support me as an artist
         </p>
 
-        <p className={styles["about-me-text-2"]}>
-          I designed wolfi in 2020, with the expectations to create a caricature
-          similar to apu the frog. I used as reference “Landwolf”, other
-          character from the popular comic “Boy’s club”, but with a couple
-          modifications to make it unique.
-        </p>
+      
       </div>
 
       {/* <video  className={styles['rectangle-xl']} src={require('../../public/videos/CreationVideoV2.mp4')}    ></video> */}
