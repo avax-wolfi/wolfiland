@@ -78,11 +78,12 @@
 
   .cost {
     width: 100%;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
   }
 
   .feedback {
-    max-width: 28rem;
+    max-width: 587.58px;
+    margin-top: 7px;
   }
 }

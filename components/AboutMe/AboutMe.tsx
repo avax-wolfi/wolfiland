@@ -47,7 +47,7 @@ export default React.memo<AboutMeProps>(function AboutMe() {
 
   return (
     <main className={styles["container"]}>
-      <div className={styles["header"]}>
+      <div className={styles["header"]} id='story'>
         <Image src={storyLogo} alt="The Story behind Wolfi" />
       </div>
       <div className={styles["about-me"]}>
