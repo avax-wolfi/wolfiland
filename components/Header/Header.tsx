@@ -57,9 +57,10 @@ export function ConnectButton() {
               <Image
                 src={viewWallet}
                 onClick={() => setShowWalletModal(true)}
+                style={{cursor: 'pointer'}}
               />
             ) : (
-              <Image src={connectWalletIcon} />
+              <Image src={connectWalletIcon} style={{cursor: 'pointer'}} />
             )}
           </div>
         </div>
