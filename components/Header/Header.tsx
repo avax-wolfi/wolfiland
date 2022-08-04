@@ -95,14 +95,14 @@ export default React.memo<HeaderProps>(function Header() {
         {/* SOCIAL LINKS */}
         <div className={styles["social-links"]}>
           <a
-            className="d-flex justify-content-center me-2 mt-3 mb-3 mb-lg-0 mt-md-0"
+            
             href="#"
           >
             <Image src={telegram} alt="Telegram" />
           </a>
           <a
-            className="d-flex justify-content-center me-2 mb-3 mb-lg-0 mt-md-0"
-            href={""}
+           
+            href={"https://twitter.com/wolfilandnfts"}
           >
             <Image src={twitter} alt="Twitter" />
           </a>
