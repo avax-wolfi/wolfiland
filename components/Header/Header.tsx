@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import Image from "next/image";
 
-import barLogo from "../../public/icons/menu logo 1.png";
+import barLogo from "../../public/icons/menu logo 1.svg";
 import  telegram from "../../public/icons/telegram.svg";
 import twitter from "../../public/icons/twitter 1.svg";
 import connectWallet from "../../public/icons/connect wallet.svg";
