@@ -74,10 +74,9 @@ export default React.memo<CollectionProps>(function Collection() {
               </div>
 
               <p>
-                We grant all copyright rights to the user for their mint(s).
-                This particular point doesn't include base Wolfi; It is only
-                granted for the minted Wolfi with the specific clothing and hair
-                color you generate.
+                Wolfi NFT owners can use their collectibles for non-profit or
+                profit purposes. This is only granted for Wolfi generated with
+                the specific clothing and hair color.
               </p>
             </div>
             <div className={styles["card"]}>
