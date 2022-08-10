@@ -97,7 +97,7 @@ export default React.memo<HeaderProps>(function Header() {
         <div className={styles["social-links"]}>
           <a
             
-            href="#"
+            href="https://t.me/WolfiLandNFT"
           >
             <Image src={telegram} alt="Telegram" />
           </a>
