@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Modal, Pagination, Row, Col, PaginationProps } from "antd";
 import { useAccountWolfis } from "../../hooks/useWolfis";
 import ImageWithLoader from "../ImageWithLoader/ImageWithLoader";
-import OkButton from "../../public/icons/ok-btn.svg";
+import OkButton from "../../public/icons/ok-button.png";
 import wolfi from "../../public/img/wolfi-modal.svg";
 import legend from "../../public/img/legend.svg";
 import closeicon from "../../public/icons/close-modal.svg";
@@ -68,10 +68,9 @@ export default React.memo<WalletProps>(function Wallet({
       onCancel={handleCancel}
       cancelButtonProps={{ hidden: true }}
       okButtonProps={{
-        icon: <Image src={OkButton} height="30" />,
-        size: "small",
+        icon: <div className={styles["modal-button"]}>OK</div>,
+        size: "small"
       }}
-      okText="'"
       closeIcon={
         <div className="close-modal-icon">
           <Image src={closeicon} height="30" />

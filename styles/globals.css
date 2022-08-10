@@ -18,9 +18,17 @@
   margin: 0;
 }
 
+.ant-modal-header,
+.ant-modal-footer {
+  border: none;
+}
+
 .ant-modal-body {
   border-top: 1px solid #482d76;
   border-bottom: 1px solid #482d76;
+  width: 80%;
+  margin: auto;
+  padding: 0;
 }
 
 .ant-modal-body > span {
@@ -72,4 +80,8 @@
 
 .legend-container {
   padding: 1rem 0 0;
+}
+
+.ant-btn.ant-btn-primary.ant-btn-sm span {
+  display: none;
 }

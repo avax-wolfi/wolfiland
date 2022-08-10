@@ -3,7 +3,18 @@
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1rem;
   grid-auto-rows: minmax(100px, auto);
-  padding-bottom: 1rem;
+  padding: 1rem 0;
+}
+
+@media screen and (max-width: 768px) {
+  .wolfi-card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+    grid-auto-rows: minmax(100px, auto);
+    padding-bottom: 1rem;
+  }
+  
 }
 
 .wolfi-card {
@@ -13,26 +24,37 @@
 }
 
 .Common {
-  border: 5px solid #4BCC61;
+  border: 5px solid #4bcc61;
   border-radius: 5px;
 }
 
 .Uncommon {
-  border: 5px solid #6BC3DC;
+  border: 5px solid #6bc3dc;
   border-radius: 5px;
 }
 
 .Rare {
-  border: 5px solid #0040FF;
+  border: 5px solid #0040ff;
   border-radius: 5px;
 }
 
 .Epic {
-  border: 5px solid #FD4131;
+  border: 5px solid #fd4131;
   border-radius: 5px;
 }
 
 .Mithic {
-  border: 5px solid #492F7A;
+  border: 5px solid #492f7a;
   border-radius: 5px;
+}
+
+.modal-button {
+  color: black;
+  font-family: "Fjalla One";
+  font-size: 1.25rem;
+  background-color: #fee153;
+  height: 25px;
+  width: 55px;
+  border-radius: 25px;
+  line-height: initial;
 }
