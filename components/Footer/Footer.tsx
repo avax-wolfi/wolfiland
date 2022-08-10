@@ -29,7 +29,7 @@ export default React.memo<FooterProps>(function Footer(){
                 <Link href='#collection'>collection</Link>
                 <Link href='#mint'>mint</Link>
                 <Link href='https://twitter.com/wolfilandnfts'><Image src={twitter} alt='Twitter'/></Link>
-                <Link href='#'><Image src={telegram} alt='Telegram' width={'26px'}/></Link>
+                <Link href='https://t.me/WolfiLandNFT'><Image src={telegram} alt='Telegram' width={'26px'}/></Link>
                 </div>
 
            </div>
