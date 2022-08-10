@@ -1,9 +1,14 @@
 import React, { useMemo, useState } from "react";
 import styles from "./Wallet.module.css";
+import Image from "next/image";
 
-import { Modal, Pagination, Row, Col } from "antd";
+import { Modal, Pagination, Row, Col, PaginationProps } from "antd";
 import { useAccountWolfis } from "../../hooks/useWolfis";
 import ImageWithLoader from "../ImageWithLoader/ImageWithLoader";
+import OkButton from "../../public/icons/ok-btn.svg";
+import wolfi from "../../public/img/wolfi-modal.svg";
+import legend from "../../public/img/legend.svg";
+import closeicon from "../../public/icons/close-modal.svg";
 
 export interface WalletProps {
   isModalVisible?: boolean;
@@ -11,6 +16,29 @@ export interface WalletProps {
   handleCancel: () => void;
   refresh?: any;
 }
+
+const Title = () => {
+  return <h1 className="modal-title">Your NFTs</h1>;
+};
+
+const getRarityScore = (
+  attributes: {
+    trait_type: string;
+    value: string;
+  }[]
+) => {
+  return attributes.find((attr) => attr.trait_type === "Rarity Score").value;
+};
+
+const itemRender: PaginationProps['itemRender'] = (_, type, originalElement) => {
+  if (type === 'prev') {
+    return <></>;
+  }
+  if (type === 'next') {
+    return <></>;
+  }
+  return originalElement;
+};
 
 export default React.memo<WalletProps>(function Wallet({
   isModalVisible,
@@ -34,12 +62,23 @@ export default React.memo<WalletProps>(function Wallet({
 
   return (
     <Modal
-      title="Your NFTs"
+      title={<Title />}
       visible={isModalVisible}
       onOk={handleOk}
       onCancel={handleCancel}
-      cancelButtonProps={{hidden: true}}
+      cancelButtonProps={{ hidden: true }}
+      okButtonProps={{
+        icon: <Image src={OkButton} height="30" />,
+        size: "small",
+      }}
+      okText="'"
+      closeIcon={
+        <div className="close-modal-icon">
+          <Image src={closeicon} height="30" />
+        </div>
+      }
     >
+      <Image src={wolfi} />
       {loading ? (
         <p>Getting your token URIs...</p>
       ) : elements.length ? (
@@ -49,7 +88,9 @@ export default React.memo<WalletProps>(function Wallet({
               <ImageWithLoader
                 key={index}
                 src={wolfi.image}
-                className={styles["wolfi-card"]}
+                className={`${styles["wolfi-card"]} ${
+                  styles[getRarityScore(wolfi.metadata.attributes)]
+                }`}
                 forceRemount={() => window.location.reload()}
               />
             ))}
@@ -60,9 +101,16 @@ export default React.memo<WalletProps>(function Wallet({
             current={current}
             pageSize={6}
             onChange={handlePageChange}
+            itemRender={itemRender}
           />
         </>
-      ) : "You don't have a Wolfi yet. Await for launch and get a Wolfi!"}
+      ) : (
+        "You don't have a Wolfi yet. Await for launch and get a Wolfi!"
+      )}
+
+      <div className="legend-container">
+        <Image src={legend} />
+      </div>
     </Modal>
   );
 });

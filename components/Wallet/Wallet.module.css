@@ -10,3 +10,28 @@
   height: 100px;
   width: 100px;
 }
+
+.Common {
+  border: 5px solid #4BCC61;
+  border-radius: 5px;
+}
+
+.Uncommon {
+  border: 5px solid #6BC3DC;
+  border-radius: 5px;
+}
+
+.Rare {
+  border: 5px solid #0040FF;
+  border-radius: 5px;
+}
+
+.Epic {
+  border: 5px solid #FD4131;
+  border-radius: 5px;
+}
+
+.Mithic {
+  border: 5px solid #492F7A;
+  border-radius: 5px;
+}

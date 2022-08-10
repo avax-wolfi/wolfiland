@@ -1,0 +1,75 @@
+.ant-modal-content {
+  border: 5px solid #8f9fd3;
+}
+
+.ant-modal-content .ant-btn {
+  background-color: transparent;
+  border: none;
+  color: transparent;
+  box-shadow: none;
+}
+
+.ant-modal-content .ant-btn .span {
+  height: 3rem;
+}
+
+.modal-title {
+  font-family: "Fjalla One";
+  margin: 0;
+}
+
+.ant-modal-body {
+  border-top: 1px solid #482d76;
+  border-bottom: 1px solid #482d76;
+}
+
+.ant-modal-body > span {
+  position: absolute !important;
+  top: -60px;
+  left: 0;
+  right: 0;
+  margin: auto !important;
+  width: 200px !important;
+}
+
+@media screen and (max-width: 768px) {
+  .modal-title {
+    font-family: "Fjalla One";
+    font-size: 14px;
+  }
+
+  .ant-modal-body > span {
+    top: -31px;
+    width: 150px !important;
+  }
+}
+
+.close-modal-icon {
+  padding-top: 0.5rem;
+}
+
+.ant-pagination {
+  text-align: center;
+}
+
+.ant-pagination-item {
+  border: 1px solid #8f9fd3;
+}
+
+.ant-pagination-item a {
+  color: #8f9fd3;
+}
+
+.ant-pagination-item-active,
+.ant-pagination-item:hover {
+  border: 1px solid #fd4131;
+}
+
+.ant-pagination-item-active a,
+.ant-pagination-item a:hover {
+  color: #fd4131;
+}
+
+.legend-container {
+  padding: 1rem 0 0;
+}
