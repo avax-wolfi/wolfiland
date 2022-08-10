@@ -14,7 +14,7 @@ export default React.memo<WelcomeProps>(function Welcome() {
       <div className={styles["welcome"]}>
         <div className={styles["welcome-sm"]}>
        
-          <Pad amt={40} />
+          <Pad amt={20} />
           <div className={styles["wolfiland-sm"]}>
             <Image src={wolfilandSm} />
           </div>
