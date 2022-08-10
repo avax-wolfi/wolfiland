@@ -22,7 +22,7 @@ export default function Document() {
         />
         <meta
           property="og:image"
-          content="https://www.wolfi.land/public/img/og-wolfi.png"
+          content="/img/og-wolfi.png"
         />
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
@@ -34,7 +34,7 @@ export default function Document() {
         />
         <meta
           property="twitter:image"
-          content="https://www.wolfi.land/public/img/og-wolfi.png"
+          content="/img/og-wolfi.png"
         />
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
