@@ -22,7 +22,7 @@ export default function Document() {
         />
         <meta
           property="og:image"
-          content="https://www.wolfi.land/public/img/og-wolfi.jpg"
+          content="https://www.wolfi.land/public/img/og-wolfi.png"
         />
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
