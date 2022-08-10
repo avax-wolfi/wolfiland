@@ -1,10 +1,9 @@
 .container {
   height: 370px;
   width: 100%;
-  background: url("../../public/img/hero-sm.svg") center bottom ,
-    url("../../public/img/banner-sm.svg") center ;
+  background: url("../../public/img/hero-sm.svg") center bottom,
+    url("../../public/img/banner-sm.svg") center;
 
-  
   background-repeat: no-repeat;
   background-size: unset;
 
@@ -12,42 +11,43 @@
   justify-content: center;
 }
 
-.pad-xl{
+.pad-xl {
   display: none;
 }
 
-.welcome{
+.welcome {
   width: 100%;
 }
 
-.welcome-sm{
- display: flex;
- flex-direction: column;
+.welcome-sm {
+  display: flex;
+  flex-direction: column;
 
- align-items: center;
- width: 100%;
+  align-items: center;
+  width: 100%;
+}
+
+.mint-now-sm {
+  margin-top: 20px;
 }
 
 .right-box {
- display: none;
+  display: none;
 }
 
-.welcome-sm  h1 {
+/* .welcome-sm  h1 {
   color: #3D2B7D;
   font-family: 'Fjalla One';
   font-weight: 300;
   text-transform: uppercase;
   font-size: 32px;
+} */
+
+.mint-now {
+  display: none;
 }
 
-
-
-.mint-now{
-   display: none;
-}
-
-@media(min-width:429px){
-
+@media (min-width: 429px) {
   .container {
     height: 474px;
     background-image: url("../../public/img/hero-sm.svg"),
@@ -55,20 +55,18 @@
     background-position: center;
     background-position: center bottom;
     background-repeat: no-repeat;
-   
-  } 
+  }
 
-  .welcome-sm{
-   height: 190px;
-   }
+  .welcome-sm {
+    height: 190px;
+  }
 
-   .wolfiland-sm{
-     margin-top: 50px;
-   }
+  .wolfiland-sm {
+    margin-top: 50px;
+  }
 }
 
 @media (min-width: 990px) {
- 
   .container {
     height: 92vh;
     background-image: url("../../public/icons/hero\ 1.svg"),
@@ -76,22 +74,20 @@
     background-position: center;
     background-position: center bottom;
     background-repeat: no-repeat;
-   
-  } 
+  }
 
-
-  .welcome-sm{
+  .welcome-sm {
     display: none;
   }
 
-  .pad-xl{
-    display:unset;
- }
+  .pad-xl {
+    display: unset;
+  }
 
- .pad-sm{
-    display:none
- }
- 
+  .pad-sm {
+    display: none;
+  }
+
   .welcome {
     width: 100%;
     height: 100%;
@@ -99,16 +95,15 @@
     justify-content: space-between;
   }
 
-  .mint-now-sm{
-     display: none;
+  .mint-now-sm {
+    display: none;
   }
 
-  .mint-now{
-     display: flex;
-     justify-content: center;
-     margin-bottom: 50px;
-     margin-left: 50px;
-
+  .mint-now {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    margin-left: 50px;
   }
 
   .left-box {
@@ -116,7 +111,6 @@
     background-image: url("../../public/icons/Welcome 1.svg");
     background-repeat: no-repeat;
     background-position: center center;
-    
   }
 
   .right-box {
@@ -143,6 +137,5 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    
   }
 }
