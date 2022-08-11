@@ -1,8 +1,7 @@
 .container {
-  height: 370px;
+  height: 474px;
   width: 100%;
-  background: url("../../public/img/hero-sm.svg") center bottom,
-    url("../../public/img/banner-sm.svg") center;
+  background: url("../../public/img/banner-sm.svg") center;
 
   background-repeat: no-repeat;
   background-size: unset;
@@ -17,6 +16,23 @@
 
 .welcome {
   width: 100%;
+}
+
+.wolfi-welcome {
+  display: none;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.wolfi-welcome-sm {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 305px;
+}
+
+.wolfi-welcome-sm img {
+  width: 200px !important;
 }
 
 .welcome-sm {
@@ -49,31 +65,32 @@
 
 @media (min-width: 429px) {
   .container {
-    height: 474px;
-    background-image: url("../../public/img/hero-sm.svg"),
-      url("../../public/img/banner1.svg");
+    background-image: url("../../public/img/banner1.svg");
     background-position: center;
     background-position: center bottom;
     background-repeat: no-repeat;
   }
 
-  .welcome-sm {
-    height: 190px;
-  }
-
-  .wolfiland-sm {
-    margin-top: 50px;
+  .wolfi-welcome-sm img {
+    width: 280px !important;
   }
 }
 
 @media (min-width: 990px) {
   .container {
     height: 92vh;
-    background-image: url("../../public/icons/hero\ 1.svg"),
-      url("../../public/img/banner1.svg");
+    background-image: url("../../public/img/banner1.svg");
     background-position: center;
     background-position: center bottom;
     background-repeat: no-repeat;
+  }
+
+  .wolfi-welcome-sm {
+    display: none;
+  }
+
+  .wolfi-welcome {
+    display: flex;
   }
 
   .welcome-sm {
