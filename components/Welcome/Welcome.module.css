@@ -24,16 +24,15 @@
   align-items: flex-end;
 }
 
-.wolfi-welcome-sm{
+.wolfi-welcome-sm {
   display: flex;
   justify-content: center;
   align-items: flex-end;
   height: 305px;
 }
 
-.wolfi-welcome-sm img{
- width: 200px !important;
-  
+.wolfi-welcome-sm img {
+  width: 200px !important;
 }
 
 .welcome-sm {
@@ -72,13 +71,9 @@
     background-repeat: no-repeat;
   }
 
-  .wolfi-welcome-sm img{
+  .wolfi-welcome-sm img {
     width: 280px !important;
-     
-   }
-   
-
- 
+  }
 }
 
 @media (min-width: 990px) {
@@ -90,10 +85,8 @@
     background-repeat: no-repeat;
   }
 
-  .wolfi-welcome-sm{
+  .wolfi-welcome-sm {
     display: none;
-  
-   
   }
 
   .wolfi-welcome {
