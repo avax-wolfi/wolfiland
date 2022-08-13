@@ -28,8 +28,6 @@ export default function Document() {
         <meta property="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@wolfilandnfts" />
         <meta name="twitter:creator" content="@HermanaRobot" />
-        <meta property="twitter:url" content="https://www.wolfi.land" />
-        <meta property="twitter:title" content="Wolfi Land" />
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
