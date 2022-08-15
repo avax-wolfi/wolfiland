@@ -25,6 +25,7 @@ import { useConnect } from "../../hooks/useConnect";
 import { connectorsByName } from "../../pages/_app";
 import Wallet from "../Wallet/Wallet";
 import Link from "next/link";
+import { ChainId } from "@pangolindex/sdk";
 
 export interface ConnectWalletProps {}
 
@@ -225,8 +226,8 @@ export default React.memo<ConnectWalletProps>(function ConnectWallet() {
       </div>
       <Pad amt={40} />
       {account ? (
-        // <Image src={mintNow} alt="Mint" onClick={mint} style={{cursor: 'pointer'}}/>
-        <Link href='https://twitter.com/wolfilandnfts'>
+        chainId === ChainId.FUJI ?  <Image src={mintNow} alt="Mint" onClick={mint} style={{cursor: 'pointer'}}/>
+        : <Link href='https://twitter.com/wolfilandnfts'>
           <Image src={launchingSoon} alt="Launching Soon!" style={{cursor: 'pointer'}} />
         </Link>
       ) : (
