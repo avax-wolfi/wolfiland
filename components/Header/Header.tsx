@@ -40,6 +40,7 @@ export function ConnectButton() {
         isModalVisible={showWalletModal}
         handleOk={() => setShowWalletModal(false)}
         handleCancel={() => setShowWalletModal(false)}
+        refresh={0}
       />
       <button
         className={styles["connect-btn"]}

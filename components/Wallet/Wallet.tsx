@@ -46,7 +46,7 @@ export default React.memo<WalletProps>(function Wallet({
   refresh,
 }) {
   const [forceRefresh, setForceRefresh] = useState(0);
-  const { elements, loading } = useAccountWolfis(refresh || 0 + forceRefresh || 0);
+  const { elements, loading } = useAccountWolfis((refresh || 0) + (forceRefresh || 0));
 
   const [current, setCurrent] = useState(1);
   const [pagination, setPagination] = useState<number[]>([0, 6]);

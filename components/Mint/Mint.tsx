@@ -148,9 +148,9 @@ export default React.memo<ConnectWalletProps>(function ConnectWallet() {
               quantity > 1 ? "NFTs" : "NFT"
             }!`
           );
-          setForceRefresh((current) => ++current);
           setLastMintHash(response.hash);
           setShowWalletModal(true);
+          setForceRefresh((current) => ++current);
         });
       })
       .catch((error) => {
