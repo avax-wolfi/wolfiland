@@ -82,6 +82,7 @@ export default React.memo<WalletProps>(function Wallet({
           <Image src={closeicon} height="30" />
         </div>
       }
+      width={650}
     >
       <Image src={wolfi} />
       {loading ? (
