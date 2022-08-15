@@ -64,5 +64,7 @@ export function useAccountWolfis(forceRefresh?: number) {
     }
   }, [chainId, account, getData, forceRefresh]);
 
+  console.log(forceRefresh)
+
   return { elements, loading };
 }

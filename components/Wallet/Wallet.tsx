@@ -5,7 +5,6 @@ import Image from "next/image";
 import { Modal, Pagination, Row, Col, PaginationProps } from "antd";
 import { useAccountWolfis } from "../../hooks/useWolfis";
 import ImageWithLoader from "../ImageWithLoader/ImageWithLoader";
-import OkButton from "../../public/icons/ok-button.png";
 import wolfi from "../../public/img/wolfi-modal.svg";
 import legend from "../../public/img/legend.svg";
 import closeicon from "../../public/icons/close-modal.svg";
@@ -46,7 +45,8 @@ export default React.memo<WalletProps>(function Wallet({
   handleCancel,
   refresh,
 }) {
-  const { elements, loading } = useAccountWolfis(refresh);
+  const [forceRefresh, setForceRefresh] = useState(0);
+  const { elements, loading } = useAccountWolfis(refresh || 0 + forceRefresh || 0);
 
   const [current, setCurrent] = useState(1);
   const [pagination, setPagination] = useState<number[]>([0, 6]);
@@ -60,13 +60,19 @@ export default React.memo<WalletProps>(function Wallet({
     return elements.slice(pagination[0], pagination[1]);
   }, [elements, pagination]);
 
+  const retry = () => setForceRefresh(current => ++current);
+
   return (
     <Modal
       title={<Title />}
       visible={isModalVisible}
       onOk={handleOk}
-      onCancel={handleCancel}
-      cancelButtonProps={{ hidden: true }}
+      onCancel={handleOk}
+      cancelButtonProps={{
+        icon: <div className={`${styles["modal-button"]} ${styles["reload"]}`}>RELOAD</div>,
+        size: "small",
+        onClick: retry
+      }}
       okButtonProps={{
         icon: <div className={styles["modal-button"]}>OK</div>,
         size: "small"

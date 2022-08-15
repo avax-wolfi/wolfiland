@@ -58,3 +58,8 @@
   border-radius: 25px;
   line-height: initial;
 }
+
+.modal-button.reload {
+  width: 70px;
+  background-color: #EBEBEB;
+}

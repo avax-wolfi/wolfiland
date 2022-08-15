@@ -190,6 +190,7 @@ export default React.memo<ConnectWalletProps>(function ConnectWallet() {
   const handleaAddQuantity = () => {
     return setQuantityToMint((current) => ++current);
   };
+  
   const handleSubstractQuantity = () => {
     return (
       !!quantity && quantity > 1 && setQuantityToMint((current) => --current)
