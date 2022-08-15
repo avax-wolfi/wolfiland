@@ -5,8 +5,8 @@ export const NetworkContextName = "NETWORK";
 export const BURN_ADDRESS = "0x000000000000000000000000000000000000dEaD";
 
 export const MINTING_CONTRACT: { [chainId in ChainId]?: string } = {
-  [ChainId.FUJI]: "0x345c071a696082Da86C7dBBBbfEBDd4822d4294C",
-  [ChainId.AVALANCHE]: "0xC7cc580D93FCD8D5c71535071d0f9e203BcA69e8",
+  [ChainId.FUJI]: "0x015B65f1bF16Ed3982fD7438498fF2aB193deB2C",
+  [ChainId.AVALANCHE]: "0x015B65f1bF16Ed3982fD7438498fF2aB193deB2C",
 };
 
 export const PRICE_CALCULATOR_CONTRACT: { [chainId in ChainId]?: string } =

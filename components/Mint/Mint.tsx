@@ -116,53 +116,53 @@ export default React.memo<ConnectWalletProps>(function ConnectWallet() {
   const mint = async () => {
     if (!chainId || !library || !account) return;
 
-    // let estimate,
-    //   method: (...args: any) => Promise<TransactionResponse>,
-    //   args: Array<string | string[] | number>,
-    //   value: BigNumber | null;
-    // estimate = mintingContract.estimateGas.mint;
-    // method = mintingContract.mint;
-    // args = [quantity.toString()];
-    // value = BigNumber.from(parseEther((+cost * quantity).toString()));
+    let estimate,
+      method: (...args: any) => Promise<TransactionResponse>,
+      args: Array<string | string[] | number>,
+      value: BigNumber | null;
+    estimate = mintingContract.estimateGas.mint;
+    method = mintingContract.mint;
+    args = [quantity.toString()];
+    value = BigNumber.from(parseEther((+cost * quantity).toString()));
 
-    // setAttemptingMint(true);
-    // setFeedback("Minting your NFTs...");
-    // await estimate(...args, value ? { value } : {})
-    //   .then((estimatedGasLimit) => {
-    //     return method(...args, {
-    //       ...(value ? { value } : {}),
-    //       gasLimit: calculateGasMargin(estimatedGasLimit),
-    //     }).then(async (response) => {
-    //       addTransaction(response, {
-    //         summary: `Mint ${quantity} Wolfi ${
-    //           quantity > 1 ? "Tokens" : "Token"
-    //         }`,
-    //       });
+    setAttemptingMint(true);
+    setFeedback("Minting your NFTs...");
+    await estimate(...args, value ? { value } : {})
+      .then((estimatedGasLimit) => {
+        return method(...args, {
+          ...(value ? { value } : {}),
+          gasLimit: calculateGasMargin(estimatedGasLimit),
+        }).then(async (response) => {
+          addTransaction(response, {
+            summary: `Mint ${quantity} Wolfi ${
+              quantity > 1 ? "Tokens" : "Token"
+            }`,
+          });
 
-    //       await response.wait();
+          await response.wait();
 
-    //       setAttemptingMint(false);
-    //       setFeedback(
-    //         `Nice, You just minted ${quantity} ${
-    //           quantity > 1 ? "NFTs" : "NFT"
-    //         }!`
-    //       );
-    //       setForceRefresh((current) => ++current);
-    //       setLastMintHash(response.hash);
-    //       setShowWalletModal(true);
-    //     });
-    //   })
-    //   .catch((error) => {
-    //     setForceRefresh((current) => ++current);
-    //     setAttemptingMint(false);
-    //     // we only care if the error is something _other_ than the user rejected the tx
-    //     if (error?.code !== 4001) {
-    //       console.error(error, ": ERROR");
-    //       setFeedback(error.data.message);
-    //     } else {
-    //       setFeedback("Something went wrong when attempting to mint")
-    //     }
-    //   });
+          setAttemptingMint(false);
+          setFeedback(
+            `Nice, You just minted ${quantity} ${
+              quantity > 1 ? "NFTs" : "NFT"
+            }!`
+          );
+          setForceRefresh((current) => ++current);
+          setLastMintHash(response.hash);
+          setShowWalletModal(true);
+        });
+      })
+      .catch((error) => {
+        setForceRefresh((current) => ++current);
+        setAttemptingMint(false);
+        // we only care if the error is something _other_ than the user rejected the tx
+        if (error?.code !== 4001) {
+          console.error(error, ": ERROR");
+          setFeedback(error.data?.message || error.message);
+        } else {
+          setFeedback("Something went wrong when attempting to mint")
+        }
+      });
 
     getData();
   };
