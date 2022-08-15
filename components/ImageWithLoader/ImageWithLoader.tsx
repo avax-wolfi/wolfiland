@@ -17,12 +17,14 @@ export default React.memo<ImageProps>(function ImageWithLoader({
   return (
     <>
       {loading && <p className={styles["loading-placeholder"]}>loading...</p>}
-      <img
-        src={src}
-        className={`${className} ${loading ? styles["loading"] : ""}`}
-        onLoad={() => setLoading(false)}
-        onError={forceRemount}
-      />
+      <a target="_blank" href={src} rel="noopener noreferrer">
+        <img
+          src={src}
+          className={`${className} ${loading ? styles["loading"] : ""}`}
+          onLoad={() => setLoading(false)}
+          onError={forceRemount}
+        />
+      </a>
     </>
   );
 });
