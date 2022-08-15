@@ -66,6 +66,15 @@
   overflow-x: auto;
 }
 
+.view-wallet {}
+
+@media (max-width: 990px) {
+  .view-wallet {
+    display: block;
+    cursor: pointer;
+  } 
+}
+
 @media (min-width: 990px) {
   .logotype-desc {
     flex-direction: row;
@@ -95,4 +104,9 @@
     max-width: 587.58px;
     margin-top: 7px;
   }
+
+  .view-wallet {
+    display: none !important;
+  } 
 }
+

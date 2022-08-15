@@ -247,11 +247,13 @@ export default React.memo<ConnectWalletProps>(function ConnectWallet() {
           <>
             <span>Actual Cost: {(+totalCost).toFixed(4)} AVAX</span>
             <span>Total Minted: {formatUnits(totalSupply, "wei")} </span>
+            
           </>
         ) : (
           <span>Connect a wallet to see more info.</span>
         )}
-       <p className={`${styles["cost"]} ${styles["feedback"]}`}>{feedback}</p> 
+        {account && <span className={styles["view-wallet"]} onClick={() => setShowWalletModal(true)}>View Your Wallet</span>}
+       <p className={`${styles["cost"]} ${styles["feedback"]}`}>{feedback}</p>
       </div>
     
     </div>
