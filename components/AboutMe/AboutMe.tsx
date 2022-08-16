@@ -95,7 +95,7 @@ export default React.memo<AboutMeProps>(function AboutMe() {
         }}
         download="wolfie.procreate"
       >
-        Download the original procreate file to verify aunthenticity
+        Download the original procreate file to verify the authenticity
       </a>
       <Pad amt={30} />
       <div className={styles["separator"]}>
