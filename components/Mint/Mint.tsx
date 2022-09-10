@@ -5,7 +5,7 @@ import max from "../../public/img/max.svg";
 import min from "../../public/img/min.svg";
 import connectWallet from "../../public/img/connect-wallet.svg";
 import mintNow from "../../public/icons/mint now 1.png";
-import launchingSoon from "../../public/icons/launching-soon.png";
+import mintAtJoePegs from "../../public/img/mint-at-joepegs.svg";
 
 import wolfiLand from "../../public/icons/logo big 1.svg";
 
@@ -208,28 +208,13 @@ export default React.memo<ConnectWalletProps>(function ConnectWallet() {
      <div className={styles["container"]}>
       <div className={styles["logotype-desc"]}>
         <Image src={wolfiLand} alt="WolfiLand" />
-        <Pad amt={20} row />
-        <Balance />
+   
       </div>
-      <Pad amt={40} />
-      <div className={styles["min-max"]}>
-        <Image src={max} alt="+" onClick={handleaAddQuantity} />
-        <input
-          type="number"
-          name="quantity"
-          id="quantity"
-          value={quantity}
-          step="1"
-          className={`${styles["hide-arrows"]} ${styles["no-borders"]} ${styles["fjalla-md"]}`}
-          onChange={handleChangeQuantity}
-        />
-        <Image src={min} alt="-" onClick={handleSubstractQuantity} />
-      </div>
+
       <Pad amt={40} />
       {account ? (
-        chainId === ChainId.FUJI ?  <Image src={mintNow} alt="Mint" onClick={mint} style={{cursor: 'pointer'}}/>
-        : <Link href='https://twitter.com/wolfilandnfts'>
-          <Image src={launchingSoon} alt="Launching Soon!" style={{cursor: 'pointer'}} />
+        <Link href='https://joepegs.com/'>
+          <Image src={mintAtJoePegs} alt="Mint at Joepegs!" style={{cursor: 'pointer'}} />
         </Link>
       ) : (
         <Image
@@ -245,9 +230,7 @@ export default React.memo<ConnectWalletProps>(function ConnectWallet() {
       <div className={styles["cost"]}>
         {account ? (
           <>
-            <span>Actual Cost: {(+totalCost).toFixed(4)} AVAX</span>
-            <span>Total Minted: {formatUnits(totalSupply, "wei")} </span>
-            
+            <span>Minting will be hosted at Joepegs!</span>
           </>
         ) : (
           <span>Connect a wallet to see more info.</span>
