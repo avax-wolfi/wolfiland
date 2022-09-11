@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import magentaWaves from "../../public/img/wavesResize.svg";
+import magentaWaves from "../../public/icons/wavesResize3.svg";
 import wolfiCollection from "../../public/img/wolfi-collection.svg";
 import wolfi from "../../public/img/aboutDefinitive.svg";
 import group1 from "../../public/img/Group 1.png";

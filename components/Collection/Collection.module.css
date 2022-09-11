@@ -106,13 +106,12 @@
   margin-bottom: -2px;
 }
 
-.down-waves {
-  rotate: 180deg;
-}
-.down-waves * {
+
+.down-waves{
   width: 100% !important;
   display: flex !important;
-  margin-bottom: -2px;
+  margin-top: -2px;
+  rotate: 180deg;
 }
 
 
