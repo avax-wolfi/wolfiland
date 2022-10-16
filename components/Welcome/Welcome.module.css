@@ -124,8 +124,9 @@
   }
 
   .left-box {
-    width: 33%;
-    background-image: url("../../public/icons/Welcome 1.svg");
+    width: 35%;
+    background-image: url("../../public/img/Welcome.svg");
+    background-size: 270px;
     background-repeat: no-repeat;
     background-position: center center;
   }
