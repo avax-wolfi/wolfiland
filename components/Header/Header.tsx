@@ -18,51 +18,17 @@ import Wallet from "../Wallet/Wallet";
 export interface HeaderProps {}
 
 export function ConnectButton() {
-  const {
-    activate,
-    activatingConnector,
-    connector,
-    context,
-    error,
-    setActivatingConnector,
-    triedEager,
-  } = useConnect();
-  const currentConnector = connectorsByName["Connect With Metamask"];
-  const activating = currentConnector === activatingConnector;
-  const connected = currentConnector === connector;
-  const disabled = !triedEager || !!activatingConnector || connected || !!error;
-
-  const [showWalletModal, setShowWalletModal] = useState(false);
-
   return (
     <>
-      <Wallet
-        isModalVisible={showWalletModal}
-        handleOk={() => setShowWalletModal(false)}
-        handleCancel={() => setShowWalletModal(false)}
-        refresh={0}
-      />
-      <button
-        className={styles["connect-btn"]}
-        disabled={disabled}
-        onClick={() => {
-          setActivatingConnector(currentConnector);
-          activate(connectorsByName["Connect With Metamask"]);
-        }}
-      >
+      <button className={styles["connect-btn"]}>
         <div className={styles["connect-btn-text-container-box"]}>
           <div className={styles["connect-btn-text"]}>
-            {activating ? (
-              "CONNECTING"
-            ) : connected ? (
-              <Image
-                src={viewWallet}
-                onClick={() => setShowWalletModal(true)}
-                style={{cursor: 'pointer'}}
-              />
-            ) : (
-              <Image src={connectWalletIcon} style={{cursor: 'pointer'}} />
-            )}
+          <Link href='https://joepegs.com/collections/0xbc3323468319cf1a2a9ca71a6f4034b7cb5f8126'>
+            <Image
+                  src={viewWallet}
+                  style={{cursor: 'pointer'}}
+                />
+          </Link>
           </div>
         </div>
       </button>

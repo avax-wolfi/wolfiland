@@ -2,12 +2,10 @@ import { Contract } from "@ethersproject/contracts";
 import { ChainId } from "@pangolindex/sdk";
 import { useMemo } from "react";
 import {
-  MINTING_CONTRACT, PRICE_CALCULATOR_CONTRACT,
+  MINTING_CONTRACT,
 } from "../constants";
 import ERC20_ABI from "../constants/abis/erc20.json";
-import { abi as NFT_MINTING_ABI } from "../constants/abis/wolfi.json"
-import { abi as TEST_PRICE_CALCULATOR_ABI } from "../constants/abis/calculatePriceTest.json"
-import { abi as PRICE_CALCULATOR_ABI } from "../constants/abis/calculatePrice.json"
+import NFT_MINTING_ABI from "../constants/abis/wolfi.json"
 import { MULTICALL_ABI, MULTICALL_NETWORKS } from "../constants/multicall";
 import { useActiveWeb3React } from "../hooks";
 import { getContract } from "../utils";
@@ -58,12 +56,4 @@ export function useMintingContract(): Contract | null {
     MINTING_CONTRACT[chainId || ChainId.AVALANCHE],
     NFT_MINTING_ABI
   );
-}
-
-export function usePriceCalculatorContract(): Contract | null {
-  const { chainId } = useActiveWeb3React();
-  return useContract(
-    PRICE_CALCULATOR_CONTRACT[chainId || ChainId.AVALANCHE],
-    chainId === ChainId.FUJI ? TEST_PRICE_CALCULATOR_ABI : PRICE_CALCULATOR_ABI
-  )
 }
